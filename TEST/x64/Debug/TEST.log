@@ -1,2 +1,6 @@
 ﻿  TEST.cpp
-  TEST.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\TEST.exe
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\TEST\TEST.cpp(9,13): error C2065: 'string': 선언되지 않은 식별자입니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\TEST\TEST.cpp(9,20): error C2146: 구문 오류: ';'이(가) 'ct' 식별자 앞에 없습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\TEST\TEST.cpp(9,20): error C2065: 'ct': 선언되지 않은 식별자입니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\TEST\TEST.cpp(11,45): error C2065: 'c': 선언되지 않은 식별자입니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\TEST\TEST.cpp(13,17): error C2065: 'c': 선언되지 않은 식별자입니다.

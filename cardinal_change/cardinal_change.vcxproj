@@ -130,8 +130,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Command.hpp" />
-    <ClInclude Include="key.hpp" />
     <ClInclude Include="roop.hpp" />
   </ItemGroup>
   <ItemGroup>
