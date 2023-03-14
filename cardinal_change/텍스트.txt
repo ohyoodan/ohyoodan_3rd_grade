@@ -1,0 +1,69 @@
+
+
+    string s;
+
+    bool tr = true;
+
+    bool str_int;
+
+    int ttttt = 0;
+
+    while (tr == true) {
+
+        cout << "\n";
+
+
+
+        cout << "입력할 숫자를 적어주세요. (1~3999)\n";
+
+
+
+        cin >> s;
+
+
+
+        str_int = (atoi(s.c_str()) != 0 || s.compare("0") == 0);
+
+        //https://kamang-it.tistory.com/449 
+
+        //0아닌지 확인, 문자열0인지 확인 
+
+        if (str_int) {
+
+            ttttt = std::stoi(s);
+
+
+
+            if (ttttt < 4000 && ttttt>0) {
+
+                string g = change(ttttt);
+
+                cout << "로마숫자 변환:" + g + " \n";
+
+
+
+            }
+
+            else {
+
+                test();
+
+                tr = false;
+
+            }
+
+        }
+
+        else {
+
+            test();
+
+        }
+
+
+
+
+    }
+
+    cout << "종료";
+
