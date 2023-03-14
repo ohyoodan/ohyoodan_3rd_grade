@@ -5,6 +5,8 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include <thread>
+
 namespace cardinal_change {
 
 
@@ -14,8 +16,9 @@ namespace cardinal_change {
 		std::vector<int> numinput; //입력 구조자료
 		std::string str; //임시 입력
 		std::string outcardinal;// 출력 구조자료
-		bool oryu = false;
+		bool oryu = false; //오류 
 		
+
 	public: 
 		bool change_Running = false;
 		cardinal_change_Loop() {};
@@ -34,7 +37,7 @@ namespace cardinal_change {
 		  }
 
 		  void Init() {
-			  
+				  
 		  }
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
@@ -135,6 +138,8 @@ namespace cardinal_change {
 			  }
 			  return result;
 		  }
+
+		 
 	};
 
 
