@@ -92,13 +92,15 @@ namespace cardinal_change {
 		  }
 		  void chack() {//상수 문자 판별 미구현
 			  numinput.clear();
-			  if (str.empty() || (str.length() == 1 && !isdigit(str[0]))) {//문자열 비어 있을 경우 false
-				  //반환 false
-			}
-			  for (char c : str) {//문자열이 숫자인지?
-				  if (!isdigit(c)) {
-					  //반환  false
-				  }
+
+			  if (std::isdigit(str[0])) {
+				  //입력 값이 숫자 일 때
+				  num_cardinal = true;
+				  cardinal_num = false;
+			  }
+			  else {
+				  num_cardinal = false;
+				  cardinal_num = true;
 			  }
 		  }
 
@@ -108,10 +110,9 @@ namespace cardinal_change {
 			  iss >> num;//변환 
 			  numinput.push_back(num);//자료 구조에 넣기
 			  output = true;
-			  
-			 
+			  			 
 		  }
-		  std::string to_roman(int num) {//상수>로마숫자 변환기
+		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리
 			  std::string result;
 			  const int values[] = {//변하지 않는 배열
 				  1000, 900, 500, 400,
@@ -134,7 +135,42 @@ namespace cardinal_change {
 			  return result;
 		  }
 
-		 
+		  
+		  int roman_to_int(const std::string& s)// 로마 숫자를 숫자로 바꾸는 함수 -헤더분리
+		  {
+			  
+			  int roman_values[] = { 1, 5, 10, 50, 100, 500, 1000 };
+			  char roman_chars[] = { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+
+			  int result = 0;
+			  int prev_value = 0;
+
+			  
+			  for (int i = s.size() - 1; i >= 0; --i) {// 문자열 끝에서부터 각 문자를 처리
+				  char c = s[i];
+
+				  // 현재 문자에 대한 숫자 값을 배열에서 찾음
+				  int value = 0;
+				  for (int j = 0; j < 7; ++j) {
+					  if (roman_chars[j] == c) {
+						  value = roman_values[j];
+						  break;
+					  }
+				  }
+
+				  
+				  if (value >= prev_value) {// 현재 문자가 이전 문자보다 크면 더해주고, 작으면 빼줌
+					  result += value;
+				  }
+				  else {
+					  result -= value;
+				  }
+
+				  prev_value = value;
+			  }
+
+			  return result;
+		  }
 	};
 
 
