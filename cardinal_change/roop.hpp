@@ -135,8 +135,8 @@ namespace cardinal_change {
 			  
 			  			 
 		  }
-		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리//수정  //4000이상의 숫자는 불가
-			  // 로마 숫자와 숫자 간의 매핑 정보
+		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 
+			  
 			  int values[] = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
 			  std::string numerals[] = { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
 			  std::string result;
@@ -153,10 +153,10 @@ namespace cardinal_change {
 			  return result;
 		  }
 
-		  bool is_valid_roman_numeral(const std::string& s)
+		  bool is_valid_roman_numeral(const std::string& s)//로마숫자 유효성 검사
 		  {
-			  // 로마 숫자의 유효성을 검증하는 로직 구현
-			  // 여기에서는 단순히 로마 숫자에 해당하는 문자들만 사용되었는지를 검증하는 것으로 대체합니다.
+			  
+			  
 			  std::string valid_chars = "IVXLCDM";
 			  for (char c : s) {
 				  if (valid_chars.find(c) == std::string::npos) {
@@ -168,7 +168,7 @@ namespace cardinal_change {
 		  
 		  int roman_to_int(const std::string& s)// 로마 숫자를 숫자로 바꾸는 함수 
 		  {
-			  // 입력된 로마 숫자가 유효한지 검증
+			  // 입력된 로마 숫자가 유효한지 검증함
 			  if (!is_valid_roman_numeral(s)) {
 				  oryu = true;
 				  return -1;// 오류
@@ -181,7 +181,7 @@ namespace cardinal_change {
 			  int prev_value = 0;
 
 			  
-			  for (int i = s.size() - 1; i >= 0; --i) {// 문자열 끝에서부터 각 문자를 처리
+			  for (int i = s.size() - 1; i >= 0; --i) {// 문자열 끝에서부터 각 문자를 처리하고
 				  char c = s[i];
 
 				  // 현재 문자에 대한 숫자 값을 배열에서 찾음
