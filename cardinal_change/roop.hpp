@@ -17,13 +17,13 @@ namespace cardinal_change {
 		std::string str; //임시 입력
 		std::string outcardinal;// 출력 구조자료
 		bool oryu = false; //오류 
-		
+		bool num_cardinal = false;// num-> cardinal
+		bool cardinal_num = false;// cardinal -> num
 
 	public: 
 		bool change_Running = false;
 		cardinal_change_Loop() {};
-		  ~cardinal_change_Loop()
-		  {};
+		  ~cardinal_change_Loop(){};
 
 		  void Run() {
 			  change_Running = true;
@@ -47,8 +47,6 @@ namespace cardinal_change {
 						  change_Running = false;
 						  //스레드 써야되는 듯
 					  }*/
-				  
-				  
 				  std::cin >> str;//숫자만 받게 설계 할 것
 				  }
 				  
@@ -58,15 +56,12 @@ namespace cardinal_change {
 		  void Update() {
 			  output = false;
 			  if (start) {
-				 // chack();
+				  chack();
 				  change();
-				  for (const auto& num : numinput) {
+				  
+				  for (const auto& num : numinput) { //숫자를 로마 숫자로 + if문으로 추가할 것
 					  outcardinal = to_roman(num);
 				  }
-				  
-				  
-				  
-				  
 				  
 			  }
 
@@ -74,15 +69,15 @@ namespace cardinal_change {
 		  }
 
 		  void Render() {
-			  if (output) {//결과 출력
+			  if (output) {//결과 출력 num->cardinal
 				  std::cout << "로마숫자:" ;
 				  
-					  std::cout << outcardinal << " "<<std::endl;
+				  std::cout << outcardinal << " "<<std::endl;
 				  
 				  std::cout << std::endl;
 			  }
 			  start = true;
-			  if (!oryu) {
+			  if (!oryu) {// 오류가 아니면 실행
 				  std::cout << "로마숫자로 변경할 숫자를 입력해주세요." << std::endl;
 				  std::cout << "ESC키를 누르면 종료합니다." << std::endl;
 				  std::cout << "입력:" ;
