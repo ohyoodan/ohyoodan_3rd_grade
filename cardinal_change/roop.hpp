@@ -8,7 +8,7 @@
 #include <thread>
 
 namespace cardinal_change {
-
+	
 
 	class cardinal_change_Loop {
 		bool output = false;//값이 나올지 안나올지 판단
@@ -20,12 +20,13 @@ namespace cardinal_change {
 		bool oryu = false; //오류 
 		bool num_cardinal = false;// num-> cardinal
 		bool cardinal_num = false;// cardinal -> num
-
+		
+		
 	public: 
 		bool change_Running = false;
 		cardinal_change_Loop() {};
 		  ~cardinal_change_Loop(){};
-
+		 
 		  void Run() {
 			  change_Running = true;
 			  Init();
@@ -38,7 +39,7 @@ namespace cardinal_change {
 		  }
 
 		  void Init() {
-				  
+			  
 		  }
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
@@ -57,7 +58,7 @@ namespace cardinal_change {
 		  void Update() {
 			  output = false;
 			  if (start) {
-				  chack();
+				  chack(str);
 				  change();
 				  if (num_cardinal) {
 					  for (const auto& num : numinput) { //숫자를 로마 숫자로 + if문으로 추가할 것
@@ -73,7 +74,7 @@ namespace cardinal_change {
 		  }
 
 		  void Render() {
-			  if (output) {//결과 출력 num->cardinal
+			  if (output&&oryu==false) {//결과 출력 num->cardinal
 				  if (num_cardinal) {
 					  std::cout << "로마숫자:";
 
@@ -83,7 +84,7 @@ namespace cardinal_change {
 
 
 				  }
-				  else if(cardinal_num) {
+				  else if(cardinal_num&&oryu==false) {
 					  std::cout << "숫자:";
 
 					  std::cout << outint<<" "<< std::endl;
@@ -93,12 +94,11 @@ namespace cardinal_change {
 				  
 			  }
 			  start = true;
-			  if (!oryu) {// 오류가 아니면 실행
+			  if (oryu==false) {// 오류가 아니면 실행
 				  std::cout << "로마숫자 or 숫자를 입력해주세요." << std::endl;
 				  std::cout << "ESC키를 누르면 종료합니다." << std::endl;
 				  std::cout << "입력:" ;
-			  }
-			  else if(oryu){
+			  }else if(oryu){
 				  std::cout << "오류 발생 종료" << std::endl;
 				  change_Running = false;
 			  }
@@ -106,10 +106,10 @@ namespace cardinal_change {
 		  void Release() {
 
 		  }
-		  void chack() {//상수 문자 판별 미구현
+		  void chack(std::string s) {
 			  numinput.clear();
-
-			  if (std::isdigit(str[0])) {
+			 for(const auto& ch: str)
+			  if (std::isdigit(ch)) {
 				  //입력 값이 숫자 일 때
 				  num_cardinal = true;
 				  cardinal_num = false;
@@ -166,7 +166,7 @@ namespace cardinal_change {
 			  return true;
 		  }
 		  
-		  int roman_to_int(const std::string& s)// 로마 숫자를 숫자로 바꾸는 함수 -헤더분리
+		  int roman_to_int(const std::string& s)// 로마 숫자를 숫자로 바꾸는 함수 
 		  {
 			  // 입력된 로마 숫자가 유효한지 검증
 			  if (!is_valid_roman_numeral(s)) {
@@ -206,6 +206,9 @@ namespace cardinal_change {
 
 			  return result;
 		  }
+
+
+		  
 	};
 
 
