@@ -98,7 +98,7 @@ namespace cardinal_change {
 				  std::cout << "ESC키를 누르면 종료합니다." << std::endl;
 				  std::cout << "입력:" ;
 			  }
-			  else {
+			  else if(oryu){
 				  std::cout << "오류 발생 종료" << std::endl;
 				  change_Running = false;
 			  }
@@ -135,7 +135,7 @@ namespace cardinal_change {
 			  
 			  			 
 		  }
-		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리//수정 1990기준으로 MXM이 정상 XMM 비정상
+		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리//수정  //4000이상의 숫자는 불가
 			  // 로마 숫자와 숫자 간의 매핑 정보
 			  int values[] = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
 			  std::string numerals[] = { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
@@ -153,10 +153,27 @@ namespace cardinal_change {
 			  return result;
 		  }
 
+		  bool is_valid_roman_numeral(const std::string& s)
+		  {
+			  // 로마 숫자의 유효성을 검증하는 로직 구현
+			  // 여기에서는 단순히 로마 숫자에 해당하는 문자들만 사용되었는지를 검증하는 것으로 대체합니다.
+			  std::string valid_chars = "IVXLCDM";
+			  for (char c : s) {
+				  if (valid_chars.find(c) == std::string::npos) {
+					  return false;
+				  }
+			  }
+			  return true;
+		  }
 		  
 		  int roman_to_int(const std::string& s)// 로마 숫자를 숫자로 바꾸는 함수 -헤더분리
 		  {
-			  
+			  // 입력된 로마 숫자가 유효한지 검증
+			  if (!is_valid_roman_numeral(s)) {
+				  oryu = true;
+				  return -1;// 오류
+			  }
+
 			  int roman_values[] = { 1, 5, 10, 50, 100, 500, 1000 };
 			  char roman_chars[] = { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
 
