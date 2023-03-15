@@ -1,6 +1,6 @@
 #pragma once
 
-#include<conio.h>
+#include <conio.h>
 #include <Windows.h>
 #include <vector>
 #include <sstream>
@@ -13,9 +13,10 @@ namespace cardinal_change {
 	class cardinal_change_Loop {
 		bool output = false;//값이 나올지 안나올지 판단
 		bool start = false;// 처음 실행 판단
-		std::vector<int> numinput; //입력 구조자료
+		std::vector<int> numinput; //입력 자료구조
 		std::string str; //임시 입력
-		std::string outcardinal;// 출력 구조자료
+		std::string outcardinal;// 출력 자료구조 num->cardnal
+		int outint;//출력 자료구조 cardinal->num
 		bool oryu = false; //오류 
 		bool num_cardinal = false;// num-> cardinal
 		bool cardinal_num = false;// cardinal -> num
@@ -47,7 +48,7 @@ namespace cardinal_change {
 						  change_Running = false;
 						  //스레드 써야되는 듯
 					  }*/
-				  std::cin >> str;//숫자만 받게 설계 할 것
+				  std::cin >> str;
 				  }
 				  
 			  
@@ -58,11 +59,14 @@ namespace cardinal_change {
 			  if (start) {
 				  chack();
 				  change();
-				  
-				  for (const auto& num : numinput) { //숫자를 로마 숫자로 + if문으로 추가할 것
-					  outcardinal = to_roman(num);
+				  if (num_cardinal) {
+					  for (const auto& num : numinput) { //숫자를 로마 숫자로 + if문으로 추가할 것
+						  outcardinal = to_roman(num);
+					  }
+				  }else if(cardinal_num){
+					  outint = roman_to_int(str);
+
 				  }
-				  
 			  }
 
 
@@ -70,15 +74,27 @@ namespace cardinal_change {
 
 		  void Render() {
 			  if (output) {//결과 출력 num->cardinal
-				  std::cout << "로마숫자:" ;
+				  if (num_cardinal) {
+					  std::cout << "로마숫자:";
+
+					  std::cout << outcardinal << " " << std::endl;
+
+					  std::cout << std::endl;
+
+
+				  }
+				  else if(cardinal_num) {
+					  std::cout << "숫자:";
+
+					  std::cout << outint<<" "<< std::endl;
+
+					  std::cout << std::endl;
+				  }
 				  
-				  std::cout << outcardinal << " "<<std::endl;
-				  
-				  std::cout << std::endl;
 			  }
 			  start = true;
 			  if (!oryu) {// 오류가 아니면 실행
-				  std::cout << "로마숫자로 변경할 숫자를 입력해주세요." << std::endl;
+				  std::cout << "로마숫자 or 숫자를 입력해주세요." << std::endl;
 				  std::cout << "ESC키를 누르면 종료합니다." << std::endl;
 				  std::cout << "입력:" ;
 			  }
@@ -98,40 +114,42 @@ namespace cardinal_change {
 				  num_cardinal = true;
 				  cardinal_num = false;
 			  }
-			  else {
+			  else {//입력 값이 문자 일 때
 				  num_cardinal = false;
 				  cardinal_num = true;
 			  }
 		  }
 
 		  void change() {//문자열>> 상수 변환기
-			  std::istringstream iss(str);//문자열을 분리해 의미있는 데이터로 변환하는 라이브러리
-			  int num;
-			  iss >> num;//변환 
-			  numinput.push_back(num);//자료 구조에 넣기
-			  output = true;
+			
+			  if (num_cardinal) {
+				  std::istringstream iss(str);//문자열을 분리해 의미있는 데이터로 변환하는 라이브러리
+				  int num;
+				  iss >> num;//변환 
+				  numinput.push_back(num);//자료 구조에 넣기
+				  output = true;
+			  }
+			  else if (cardinal_num) {
+				  output = true;
+			  }
+			  
 			  			 
 		  }
-		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리
+		  std::string to_roman(int num) {//상수>로마숫자 변환기 - 헤더분리//수정 1990기준으로 MXM이 정상 XMM 비정상
+			  // 로마 숫자와 숫자 간의 매핑 정보
+			  int values[] = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
+			  std::string numerals[] = { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
 			  std::string result;
-			  const int values[] = {//변하지 않는 배열
-				  1000, 900, 500, 400,
-				  100, 90, 50, 40,
-				  10, 9, 5, 4,
-				  1
-			  };
-			  const std::string symbols[] = {//변하지 않는 배열
-				  "M", "CM", "D", "CD",
-				  "C", "XC", "L", "XL",
-				  "X", "IX", "V", "IV",
-				  "I"
-			  };
-			  for (int i = 0; i < 13; ++i) {
+
+			  // 큰 값부터 작은 값 순서대로 처리
+			  for (int i = 12; i >= 0; --i) {
+				  // 현재 값이 남아있는 동안 처리
 				  while (num >= values[i]) {
 					  num -= values[i];
-					  result += symbols[i];
+					  result += numerals[i];
 				  }
 			  }
+
 			  return result;
 		  }
 
