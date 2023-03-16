@@ -28,8 +28,6 @@
     <Text Include="해야 할 것.txt">
       <Filter>리소스 파일</Filter>
     </Text>
-    <Text Include="내용.md">
-      <Filter>리소스 파일</Filter>
-    </Text>
+    <Text Include="내용.md" />
   </ItemGroup>
 </Project>
