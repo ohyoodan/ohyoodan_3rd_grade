@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include <thread>
+#include <chrono>
 
 namespace cardinal_change {
 	
@@ -39,19 +40,21 @@ namespace cardinal_change {
 		  }
 
 		  void Init() {
-			  
+			  std::thread t1(&cardinal_change::cardinal_change_Loop::Exit, this);
+			  t1.detach();
+			
 		  }
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
 
-					  /*if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
-						 // 종료
-						  change_Running = false;
-						  //스레드 써야되는 듯
-					  }*/
+				  /*if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+					 // 종료
+					  change_Running = false;
+					  //스레드 써야되는 듯
+				  }*/
 				  std::cin >> str;
-				  }
-				  
+
+			  }
 			  
 		  }
 
@@ -108,16 +111,20 @@ namespace cardinal_change {
 		  }
 		  void chack(std::string s) {
 			  numinput.clear();
+
+			  bool nu = false;
 			 for(const auto& ch: str)
 			  if (std::isdigit(ch)) {
 				  //입력 값이 숫자 일 때
 				  num_cardinal = true;
 				  cardinal_num = false;
+				  nu = true;
 			  }
 			  else {//입력 값이 문자 일 때
 				  num_cardinal = false;
 				  cardinal_num = true;
 			  }
+			 
 		  }
 
 		  void change() {//문자열>> 상수 변환기
@@ -206,6 +213,18 @@ namespace cardinal_change {
 
 			  return result;
 		  }
+		  void Exit() {
+			 
+			  while (1) {
+				  if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+					  change_Running = false;
+					  std::terminate();
+					  // 종료			
+					  break;
+				  }
+			  }
+		  }
+		  
 
 
 		  
