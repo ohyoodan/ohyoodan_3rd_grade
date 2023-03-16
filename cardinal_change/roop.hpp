@@ -32,9 +32,9 @@ namespace cardinal_change {
 			  change_Running = true;
 			  Init();
 			  while (change_Running) {
-				  Input();
-				  Update();
-				  Render();
+				  if (change_Running)Input(); else break;
+				  if (change_Running)Update(); else break;
+				  if (change_Running) Render(); else break;
 			  }
 			  Release();
 		  }
@@ -47,13 +47,8 @@ namespace cardinal_change {
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
 
-				  /*if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
-					 // 종료
-					  change_Running = false;
-					  //스레드 써야되는 듯
-				  }*/
+				  std::ios_base::sync_with_stdio(false);
 				  std::cin >> str;
-
 			  }
 			  
 		  }
@@ -218,14 +213,33 @@ namespace cardinal_change {
 			  while (1) {
 				  if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
 					  change_Running = false;
-					  std::terminate();
+					  
 					  // 종료			
 					  break;
 				  }
 			  }
 		  }
 		  
+		  //void input_th(std::string& input) {
 
+			 // if (_kbhit()) {
+				//  if (getasynckeystate(vk_escape) & 0x8000) {  // esc 키 입력 체크
+				//	  return;
+				//  }
+				//  else if (_kbhit()) {  // 키보드 입력 체크
+				//	  char ch = _getch();
+				//	  if (ch == 13) {  // enter 키 입력 체크
+				//		  std::getline(std::cin, input);
+				//		  return;
+				//	  }
+				//	  else {
+				//		  input += ch;
+				//	  }
+				//  }
+				//  std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+			 // }
+		  //}
 
 		  
 	};
