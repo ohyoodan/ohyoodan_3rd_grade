@@ -46,9 +46,22 @@ namespace cardinal_change {
 		  }
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
+				  char ch;
+				  bool done = false;
+				  while (!done) {
 
-				  std::ios_base::sync_with_stdio(false);
-				  std::cin >> str;
+					  if (_kbhit()) {  // 입력 버퍼에서 키 입력이 있는지 확인
+						  ch = _getch();  // 키 입력을 가져옴
+						  if (ch == 27) {  // ESC 키를 누르면 프로그램 종료
+							  done = true;
+
+						  }
+						  else {
+							  str += ch;  // 입력받은 문자열에 추가
+						  }
+					  }
+				  }
+				  
 			  }
 			  
 		  }
@@ -213,7 +226,7 @@ namespace cardinal_change {
 			  while (1) {
 				  if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
 					  change_Running = false;
-					  
+					  std::cout << std::endl<<"종료";
 					  // 종료			
 					  break;
 				  }
