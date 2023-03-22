@@ -46,25 +46,43 @@ namespace cardinal_change {
 		  }
 		  void Input() {
 			  if (start) {//처음에는 실행하지 않는다.				 
-				  char ch;
+
+				  char c;
 				  bool done = false;
-				  while (!done) {
-
-					  if (_kbhit()) {  // 입력 버퍼에서 키 입력이 있는지 확인
-						  ch = _getch();  // 키 입력을 가져옴
-						  if (ch == 27) {  // ESC 키를 누르면 프로그램 종료
+				  while (done == false) {
+					  if (_kbhit) {
+						  
+						  c = _getch();
+						  if (c == 27) {
 							  done = true;
-
+							  
+						  }
+						  else if (c == 13) {
+							  done = true;
+							  
+						  }
+						  else if (c == 8) {
+							  if (!str.empty()) {
+								  str.pop_back();
+								  std::cout << "입력한 값:" << str << std::endl;
+							  }
+							  
 						  }
 						  else {
-							  str += ch;  // 입력받은 문자열에 추가
+							  str += c;
+							  std::cout << "입력한 값:" << str << std::endl;
 						  }
+						  
 					  }
-				  }
-				  
+					  
+
+
+				  }				 
 			  }
 			  
 		  }
+			  
+		  
 
 		  void Update() {
 			  output = false;
@@ -80,7 +98,7 @@ namespace cardinal_change {
 
 				  }
 			  }
-
+			  str = "";
 
 		  }
 
@@ -108,7 +126,7 @@ namespace cardinal_change {
 			  if (oryu==false) {// 오류가 아니면 실행
 				  std::cout << "로마숫자 or 숫자를 입력해주세요." << std::endl;
 				  std::cout << "ESC키를 누르면 종료합니다." << std::endl;
-				  std::cout << "입력:" ;
+				  
 			  }else if(oryu){
 				  std::cout << "오류 발생 종료" << std::endl;
 				  change_Running = false;
@@ -168,7 +186,7 @@ namespace cardinal_change {
 			  return result;
 		  }
 
-		  bool is_valid_roman_numeral(const std::string& s)//로마숫자 유효성 검사
+		  bool is_valid_roman_numeral(const std::string& s)//로마숫자 유효성 검사(다른 문자열이 들어가면 오류 출력)
 		  {
 			  
 			  
@@ -231,30 +249,8 @@ namespace cardinal_change {
 					  break;
 				  }
 			  }
-		  }
-		  
-		  //void input_th(std::string& input) {
-
-			 // if (_kbhit()) {
-				//  if (getasynckeystate(vk_escape) & 0x8000) {  // esc 키 입력 체크
-				//	  return;
-				//  }
-				//  else if (_kbhit()) {  // 키보드 입력 체크
-				//	  char ch = _getch();
-				//	  if (ch == 13) {  // enter 키 입력 체크
-				//		  std::getline(std::cin, input);
-				//		  return;
-				//	  }
-				//	  else {
-				//		  input += ch;
-				//	  }
-				//  }
-				//  std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
-			 // }
-		  //}
-
-		  
+		  } 
+		 		  
 	};
 
 
