@@ -9,8 +9,14 @@ int yuhanscanf(const char* format, ...) {
     int match_count = 0;
     char str[512];
     fgets(str, sizeof(str), stdin);
+    
+    char* ptr = strstr(str, "\t");
+    while (ptr != NULL) {
+        strncpy(ptr, " ",1);       
+        ptr = strstr(ptr + 1, "\t");
+    }
     char* token = strtok(str, " ");
-
+    
     while (token != NULL && *format != '\n') {//다음 토큰이 없을 때, 다음 포멧이 없을 때
 
         if (*format == '%') {
@@ -47,6 +53,8 @@ int yuhanscanf(const char* format, ...) {
     va_end(args);
     return match_count;
 }
+
+
 
 int main() {
     int a;

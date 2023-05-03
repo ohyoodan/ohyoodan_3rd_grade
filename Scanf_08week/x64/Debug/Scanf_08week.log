@@ -1,4 +1,4 @@
 ﻿  Main.c
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(25,32): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(53,11): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(31,32): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(61,11): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
   Scanf_08week.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\Scanf_08week.exe
