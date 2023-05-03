@@ -10,7 +10,9 @@ int yuhanscanf(const char* format, ...) {
     char str[512];
     fgets(str, sizeof(str), stdin);
     char* token = strtok(str, " ");
-    while (token != NULL && *format != '\n') {
+    
+    while (token != NULL && *format != '\n') {//다음 토큰이 없을 때, 다음 포멧이 없을 때
+        
         if (*format == '%') {
             format++;            
             void* arg = va_arg(args, void*);
@@ -34,9 +36,13 @@ int yuhanscanf(const char* format, ...) {
             default:
                 break;
             }
+            token = strtok(NULL, " ");
         }
-        format++;
-        token = strtok(NULL, " ");
+        format++;// 끝날 때 한 번씩 
+           
+        
+        
+        
     }
     va_end(args);
     return match_count;
@@ -45,9 +51,12 @@ int yuhanscanf(const char* format, ...) {
 int main() {
     int a;
     float b=3.4;
-    char c[10] = { 'd',};
-    yuhanscanf("%d %f %s", &a, &b, c);
-    printf("TEST");
-    printf("%d %f %s\n", a, b, c);
+    char c;
+    char d[10];
+
+    int t;
+    t=yuhanscanf("%d %f %c %s", &a, &b, &c, d);
+    printf("%d\n",t);
+    printf("%d %.4f %c %s \n", a, b, c,d);
     return 0;
 }
