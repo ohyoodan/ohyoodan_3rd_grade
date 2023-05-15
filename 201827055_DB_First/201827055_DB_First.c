@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +35,7 @@ struct Node* insertNode(struct Node* root, const char* data) {
 void inorderTraversal(struct Node* root) {
     if (root != NULL) {
         inorderTraversal(root->left);
-        printf("%s\n", root->data);
+        printf("%s ", root->data);
         inorderTraversal(root->right);
     }
 }
@@ -50,32 +49,18 @@ void freeTree(struct Node* root) {
 }
 
 int main() {
-    const char* inputString = "내 이름은 멋진 이은석님이고 이번학기 점수는 989999점이고 성적은 A를 받았습니다.";
-    const char* delimiter = " ";
-
-    // 문자열을 쪼개어 저장할 배열 선언
-    char dataArray[100][100];
-    int dataArraySize = 0;
-
-    // strtok 함수를 사용하여 문자열을 쪼개어 배열에 저장
-    char* token = strtok((char*)inputString, delimiter);
-    while (token != NULL) {
-        strcpy(dataArray[dataArraySize], token);
-        dataArraySize++;
-        token = strtok(NULL, delimiter);
-    }
-
-    // 배열에 저장된 데이터를 이진 트리에 삽입
     struct Node* root = NULL;
-    for (int i = 0; i < dataArraySize; i++) {
-        root = insertNode(root, dataArray[i]);
-    }
 
-    // 이진 트리의 데이터를 중위 순회하여 출력
-    printf("이진 트리의 중위 순회 결과:\n");
+    root = insertNode(root, "Apple");
+    root = insertNode(root, "Banana");
+    root = insertNode(root, "Cherry");
+    root = insertNode(root, "Date");
+    root = insertNode(root, "Fig");
+
+    printf("이진 트리의 중위 순회 결과: ");
     inorderTraversal(root);
+    printf("\n");
 
-    // 이진 트리의 메모리 해제
     freeTree(root);
 
     return 0;
