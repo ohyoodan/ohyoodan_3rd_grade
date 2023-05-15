@@ -4,8 +4,9 @@
 #include <string.h>
 #include "Tree.h"
 
-void FILE_C() {
+char* FILE_C() {
     FILE* fp;
+    long File_size;
     char filename[] = "TEST.txt";
     fp = fopen(filename, "r");
     if (fp == NULL) {
@@ -23,17 +24,35 @@ void FILE_C() {
     }
     fp = fopen(filename, "r");
     char buffer[256];
+    
     while (fgets(buffer, sizeof(buffer), fp )!= NULL) {
-        printf("%s", buffer);
+        printf("%s", buffer);        
     }
+    fseek(fp, 0, SEEK_END);//파일 크기 계산
+    File_size = ftell(fp);
+    rewind(fp);
+
+    char* str = (char*)malloc(File_size * sizeof(char));
+    if (str == NULL) {
+        printf("\n메모리 할당 실패");
+        fclose(fp);
+        return -1;
+    }
+    fread(str, sizeof(char), File_size, fp);
+    str[File_size] = '\0';
+
     fclose(fp);
-    return 0;
+    return str;
 }
+
 
 int main() {
     struct Node* root = NULL;
-    FILE_C();
-
+    
+    char*bu=FILE_C();
+    printf("\n");
+    printf("%s", bu);
+   // free(bu);
    /* root = insertNode(root, "Apple");
     root = insertNode(root, "Banana");
     root = insertNode(root, "Cherry");
@@ -47,7 +66,7 @@ int main() {
     inorderTraversal(root);*/
     printf("\n");
 
-    freeTree(root);
+    //freeTree(root);
 
     return 0;
 }
