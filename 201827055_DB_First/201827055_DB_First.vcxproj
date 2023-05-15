@@ -132,6 +132,9 @@
   <ItemGroup>
     <ClCompile Include="201827055_DB_First.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tree.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
