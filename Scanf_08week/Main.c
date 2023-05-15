@@ -63,7 +63,8 @@ int main() {
     char d[10];
 
     int t;
-    t = yuhanscanf("%d %f %c %s", &a, &b, &c, d);
+    //t = yuhanscanf("%d %f %c %s", &a, &b, &c, d);
+    t = yuhanscanf("%d %f %c %s", &b, &c, &a, d);
     printf("%d\n", t);
     printf("%d %f %c %s \n", a, b, c, d);
     return 0;
