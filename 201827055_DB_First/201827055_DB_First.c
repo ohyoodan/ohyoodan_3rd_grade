@@ -25,22 +25,18 @@ char* FILE_C() {
     fp = fopen(filename, "r");
     char buffer[256];
     
-    while (fgets(buffer, sizeof(buffer), fp )!= NULL) {
-        printf("%s", buffer);        
-    }
-
     fseek(fp, 0, SEEK_END);//파일 포인터 지정한 위치로
     File_size = ftell(fp);//파일 포인터 현재 위치
     rewind(fp);// 파일 포인터 처음으로
 
-    char* str = (char*)malloc(File_size-4 * sizeof(char));
+    char* str = (char*)malloc((File_size-sizeof(int)) * sizeof(char));//포인터 
     if(str == NULL) {
         printf("\n메모리 할당 실패");
         fclose(fp);
         return -1;
     }
-    fread(str, sizeof(char), File_size, fp);
-    str[File_size] = '\0';
+    fread(str, sizeof(int), File_size, fp);
+    str[File_size-4] = '\0';
 
     fclose(fp);
     return str;
