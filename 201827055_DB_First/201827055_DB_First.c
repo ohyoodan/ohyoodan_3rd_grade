@@ -28,12 +28,13 @@ char* FILE_C() {
     while (fgets(buffer, sizeof(buffer), fp )!= NULL) {
         printf("%s", buffer);        
     }
-    fseek(fp, 0, SEEK_END);//파일 크기 계산
-    File_size = ftell(fp);
-    rewind(fp);
+
+    fseek(fp, 0, SEEK_END);//파일 포인터 지정한 위치로
+    File_size = ftell(fp);//파일 포인터 현재 위치
+    rewind(fp);// 파일 포인터 처음으로
 
     char* str = (char*)malloc(File_size * sizeof(char));
-    if (str == NULL) {
+    if(str == NULL) {
         printf("\n메모리 할당 실패");
         fclose(fp);
         return -1;
