@@ -22,8 +22,7 @@ char* FILE_C() {
         fprintf(fp, "내 이름은 멋진 이은석님이고  이번학기 점수는 989999점이고 성적은 A를 받았습니다.\n\0");
         fclose(fp);
     }
-    fp = fopen(filename, "r");
-    char buffer[256];
+    fp = fopen(filename, "r");    
     
     fseek(fp, 0, SEEK_END);//파일 포인터 지정한 위치로
     File_size = ftell(fp);//파일 포인터 현재 위치
@@ -36,7 +35,7 @@ char* FILE_C() {
         return -1;
     }
     fread(str, sizeof(int), File_size, fp);
-    str[File_size-4] = '\0';
+    str[File_size-sizeof(int)] = '\0';
 
     fclose(fp);
     return str;
