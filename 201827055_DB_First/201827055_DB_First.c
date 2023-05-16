@@ -33,7 +33,7 @@ char* FILE_C() {
     File_size = ftell(fp);//파일 포인터 현재 위치
     rewind(fp);// 파일 포인터 처음으로
 
-    char* str = (char*)malloc(File_size * sizeof(char));
+    char* str = (char*)malloc(File_size-4 * sizeof(char));
     if(str == NULL) {
         printf("\n메모리 할당 실패");
         fclose(fp);
