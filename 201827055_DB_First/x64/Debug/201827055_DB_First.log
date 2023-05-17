@@ -1,5 +1,6 @@
 ﻿  201827055_DB_First.c
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(18,21): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(38,18): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(55,11): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
-  201827055_DB_First.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(19,21): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(39,18): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(113,5): warning C4013: 'extractLines'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+201827055_DB_First.obj : error LNK2019: extractLinesmain 함수에서 참조되는 확인할 수 없는 외부 기호
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
