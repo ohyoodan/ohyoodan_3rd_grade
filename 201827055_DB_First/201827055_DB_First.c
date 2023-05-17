@@ -4,6 +4,8 @@
 #include <string.h>
 #include "Tree.h"
 
+static int size_i;
+
 char* FILE_C() {
     FILE* fp;
     long File_size;
@@ -19,7 +21,8 @@ char* FILE_C() {
         printf(fp, "\n");
         fprintf(fp, "내 이름은 %%s이고 이번학기 점수는 %%d9999점이고 성적은 %%c를 받았습니다.\n");//포멧 9999점 인식 못해야됨 즉 아래 98점으로 출력되어야함
         fprintf(fp, "\n");
-        fprintf(fp, "내 이름은 멋진 이은석님이고  이번학기 점수는 989999점이고 성적은 A를 받았습니다.\n\0");
+        fprintf(fp, "내 이름은 멋진 이은석님이고  이번학기 점수는 989999점이고 성적은 A를 받았습니다.");
+        fputc('\0', fp);
         fclose(fp);
     }
     fp = fopen(filename, "r");    
@@ -28,19 +31,33 @@ char* FILE_C() {
     File_size = ftell(fp);//파일 포인터 현재 위치
     rewind(fp);// 파일 포인터 처음으로
 
-    char* str = (char*)malloc((File_size-sizeof(int)) * sizeof(char));//포인터 
+    char* str = (char*)malloc((File_size) * sizeof(char));//포인터 
     if(str == NULL) {
         printf("\n메모리 할당 실패");
         fclose(fp);
         return -1;
     }
-    fread(str, sizeof(int), File_size, fp);
-    str[File_size-sizeof(int)] = '\0';
-
+    fread(str, sizeof(char), File_size, fp);
+    
+    size_i= (int)File_size;
     fclose(fp);
     return str;
 }
+void chack(const char *chack) {
+    
+    int len = 0;
+    while (1) {
+        if (len==size_i) {
+            
+        }
+        else if (chack[len + 1] == '\0') {
+            break;
+        }
+        printf("\n%d\n",len);
+        len++;
+    }
 
+}
 
 int main() {
     struct Node* root = NULL;
@@ -48,7 +65,10 @@ int main() {
     char*bu=FILE_C();
     printf("\n");
     printf("%s", bu);
-   // free(bu);
+    
+    chack(bu);
+    
+    // free(bu);
    /* root = insertNode(root, "Apple");
     root = insertNode(root, "Banana");
     root = insertNode(root, "Cherry");

@@ -46,16 +46,16 @@ void main() {
 
 	auto t0 = chrono::system_clock::now();
 
-	vector<shared_ptr<std::thread>>threads;
+	vector<shared_ptr<thread>>threads;
 
 	for (int i = 0; i < ThreadCount; i++) {
 
-		shared_ptr<std::thread>thread(new std::thread([&]() {
+		shared_ptr<thread> thread(new std::thread([&]() {
 			while (true)
 			{
 				int n;
 				{
-					lock_guard<recursive_mutex> num_lock(num_mutex);
+					lock_guard<recursive_mutex>num_lock(num_mutex);
 					n = num;
 					num++;
 				}
@@ -76,7 +76,7 @@ void main() {
 		thread->join();
 	}
 	//³¡
-
+	
 	auto t1 = chrono::system_clock::now();
 	auto duration = chrono::duration_cast<chrono::microseconds>(t1 - t0).count();
 	cout << "Took" << duration << "milliseconds" << endl;

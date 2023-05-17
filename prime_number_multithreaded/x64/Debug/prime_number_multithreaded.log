@@ -1,3 +1,7 @@
 ﻿  prime_number_multithereaded.cpp
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(38,13): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  prime_number_multithreaded.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\prime_number_multithreaded.exe
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(38,13): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(53,33): error C2061: 구문 오류: 식별자 'thread'
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(53,46): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(53,46): error C2143: 구문 오류: ')'이(가) ';' 앞에 없습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(70,4): error C2059: 구문 오류: ')'
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(70,5): error C2059: 구문 오류: ')'
