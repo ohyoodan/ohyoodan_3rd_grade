@@ -18,7 +18,7 @@ char* FILE_C() {
             return 1;
         }
         printf("파일이 없어 생성하였습니다.\n");
-        printf(fp, "\n");
+        printf("\n");
         fprintf(fp, "내 이름은 %%s이고 이번학기 점수는 %%d9999점이고 성적은 %%c를 받았습니다.\n");//포멧 9999점 인식 못해야됨 즉 아래 98점으로 출력되어야함
         fprintf(fp, "\n");
         fprintf(fp, "내 이름은 멋진 이은석님이고  이번학기 점수는 989999점이고 성적은 A를 받았습니다.");
@@ -44,23 +44,43 @@ char* FILE_C() {
     return str;
 }
 void chack(const char *chack) {
-    
+    struct Node* root = NULL;
+
     int len = 0;
+    int char_num;
+    int int_num;
+    int string_num;
+    
+    char* char_ = (char*)malloc((sizeof(char)) * size_i);
+    char* int_ = (char*)malloc((sizeof(char)) * size_i);
+    char* string_ = (char*)malloc((sizeof(char)) * size_i);
+
     while (1) {
-        if (len==size_i) {
-            
-        }
-        else if (chack[len + 1] == '\0') {
+        if (chack[len]=='\0') {
             break;
         }
-        printf("\n%d\n",len);
-        len++;
+        else if (chack[len] == '\n' && chack[len + 1] == '\n') {
+            printf("\n줄 바뀜!");
+        }
+        
+        len++;            
     }
 
+    //printf("\nint(%d개): %s");
+    //                    
+    //printf("\nchar(%d개):%s");
+
+    //pritnf("\nstring(%d개):%s");
+
+
+    freeTree(root);
+    free(char_);
+    free(int_);
+    free(string_);
 }
 
 int main() {
-    struct Node* root = NULL;
+    
     
     char*bu=FILE_C();
     printf("\n");
@@ -68,7 +88,7 @@ int main() {
     
     chack(bu);
     
-    // free(bu);
+    
    /* root = insertNode(root, "Apple");
     root = insertNode(root, "Banana");
     root = insertNode(root, "Cherry");
@@ -82,7 +102,7 @@ int main() {
     inorderTraversal(root);*/
     printf("\n");
 
-    //freeTree(root);
-
+    
+    free(bu);
     return 0;
 }
