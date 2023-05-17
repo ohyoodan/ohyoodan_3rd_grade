@@ -45,38 +45,68 @@ char* FILE_C() {
 }
 void chack(const char *chack) {
     struct Node* root = NULL;
+    struct Node* root1 = NULL;
+    
+    
+    int start = 0;//false;
 
     int len = 0;
-    int char_num;
-    int int_num;
-    int string_num;
+    int char_num=0;
+    int int_num=0;
+    int str_num=0;
+
+    char* token1 = chack;
+    char* token2 = strtok(token1, "\n\n");
+
     
     char* char_ = (char*)malloc((sizeof(char)) * size_i);
     char* int_ = (char*)malloc((sizeof(char)) * size_i);
-    char* string_ = (char*)malloc((sizeof(char)) * size_i);
-
+    /*char* str_ = (char*)malloc((sizeof(char)) * size_i);    */
+    
     while (1) {
+        root = insertNode(root, chack[len]);
+        len++;
+        if(start == 0) {
+            len = 0;
+            start = 1;
+        }
+
         if (chack[len]=='\0') {
             break;
         }
-        else if (chack[len] == '\n' && chack[len + 1] == '\n') {
-            printf("\n줄 바뀜!");
+        else if (chack[len] == '%') {
+            len++;            
+            switch (chack[len])
+            {
+            case 'd':int_num++;
+                len++;
+                break;
+            case 's':str_num++;
+                len++;
+                break;
+            case 'c':char_num++;
+                len++;
+                break;
+            default:
+                break;
+            }
         }
         
-        len++;            
+                
     }
 
-    //printf("\nint(%d개): %s");
-    //                    
-    //printf("\nchar(%d개):%s");
+    
+    printf("\nint(%d개): %s",int_num,int_);                       
 
-    //pritnf("\nstring(%d개):%s");
+    printf("\nchar(%d개):%s",char_num,char_);
+
+    //pritnf("\nstring(%d개):%s",str_num,str_);
 
 
     freeTree(root);
-    free(char_);
-    free(int_);
-    free(string_);
+    
+    free(int_);    
+    
 }
 
 int main() {
@@ -85,7 +115,7 @@ int main() {
     char*bu=FILE_C();
     printf("\n");
     printf("%s", bu);
-    
+    printf("\n===================================================================================");
     chack(bu);
     
     

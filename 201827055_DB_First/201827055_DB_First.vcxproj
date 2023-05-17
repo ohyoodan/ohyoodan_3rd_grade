@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="TEST.txt" />
     <Text Include="상세.txt" />
   </ItemGroup>
   <ItemGroup>

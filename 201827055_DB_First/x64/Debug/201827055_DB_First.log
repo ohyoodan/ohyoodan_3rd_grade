@@ -1,7 +1,5 @@
 ﻿  201827055_DB_First.c
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(18,21): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(38,18): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(50,9): warning C4101: 'char_num' :참조되지 않은 지역 변수입니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(52,9): warning C4101: 'string_num' :참조되지 않은 지역 변수입니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(51,9): warning C4101: 'int_num' :참조되지 않은 지역 변수입니다.
-  201827055_DB_First.vcxproj -> C:\Users\YUHAN\Source\Repos\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(18,21): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(38,18): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(57,11): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+  201827055_DB_First.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
