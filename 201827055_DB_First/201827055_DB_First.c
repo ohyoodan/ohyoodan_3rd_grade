@@ -46,10 +46,7 @@ char* FILE_C() {
 void chack(const char *chack) {
     struct Node* root = NULL;
     struct Node* root1 = NULL;
-    
-    
-    int start = 0;//false;
-
+            
     int len = 0;
     int char_num=0;
     int int_num=0;
@@ -61,20 +58,13 @@ void chack(const char *chack) {
     
     char* char_ = (char*)malloc((sizeof(char)) * size_i);
     char* int_ = (char*)malloc((sizeof(char)) * size_i);
-    /*char* str_ = (char*)malloc((sizeof(char)) * size_i);    */
     
-    while (1) {
-        root = insertNode(root, chack[len]);
-        len++;
-        if(start == 0) {
-            len = 0;
-            start = 1;
-        }
+    
+    while (chack[len]!='\0') {
+        root = insertNode(root, &chack[len]);
+        root1 = insertNode(root1, &chack[len]);
 
-        if (chack[len]=='\0') {
-            break;
-        }
-        else if (chack[len] == '%') {
+        if (chack[len] == '%') {
             len++;            
             switch (chack[len])
             {
@@ -92,7 +82,7 @@ void chack(const char *chack) {
             }
         }
         
-                
+        len++;
     }
 
     
@@ -100,7 +90,7 @@ void chack(const char *chack) {
 
     printf("\nchar(%d°³):%s",char_num,char_);
 
-    //pritnf("\nstring(%d°³):%s",str_num,str_);
+    
 
 
     freeTree(root);
