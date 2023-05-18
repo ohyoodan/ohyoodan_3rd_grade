@@ -7,6 +7,7 @@
 #include "Flie.h"
 
 static size_t size_i;
+//연산자 오버로딩
 
 int main() {
     
