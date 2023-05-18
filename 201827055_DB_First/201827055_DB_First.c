@@ -4,104 +4,9 @@
 #include <string.h>
 #include "Tree.h"
 #include "sile.h"
+#include "Flie.h"
 
 static size_t size_i;
-
-char* FILE_C() {
-    FILE* fp;
-    long File_size;
-    char filename[] = "TEST.txt";
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        fp = fopen(filename, "w");
-        if (fp == NULL) {
-            printf("파일을 생성 할 수 없습니다.\n");
-            return 1;
-        }
-        printf("파일이 없어 생성하였습니다.\n");
-        printf("\n");
-        fprintf(fp, "내 이름은 %%s이고 이번학기 점수는 %%d9999점이고 성적은 %%c를 받았습니다.\n");
-        fprintf(fp, "\n");
-        fprintf(fp, "내 이름은 멋진 이은석님이고  이번학기 점수는 989999점이고 성적은 A를 받았습니다.");
-        fputc('\0', fp);
-        fclose(fp);
-    }
-    fp = fopen(filename, "r");    
-    
-    fseek(fp, 0, SEEK_END);//파일 포인터 지정한 위치로
-    File_size = ftell(fp);//파일 포인터 현재 위치
-    rewind(fp);// 파일 포인터 처음으로
-
-    char* str = (char*)malloc((File_size) * sizeof(char));//포인터 
-    if(str == NULL) {
-        printf("\n메모리 할당 실패");
-        fclose(fp);
-        return -1;
-    }
-    fread(str, sizeof(char), File_size, fp);
-    
-    size_i= (int)File_size;
-    fclose(fp);
-    return str;
-}
-
-
-void chack(const char *chack) {
-    struct Node* root = NULL;
-    struct Node* root1 = NULL;
-            
-    int outslie = 0;
-    int len = 0;
-    int char_num=0;
-    int int_num=0;
-    int str_num=0;
-
-    
-
-
-                            
-    char* char_ = (char*)malloc((sizeof(char)) * size_i);
-    char* int_ = (char*)malloc((sizeof(char)) * size_i);
-            
-    while (chack[len]!='\0') {
-       //   root = insertNode(root, &chack[len]);
-       // root1 = insertNode(root1, &chack[len]);
-
-        if (chack[len] == '%') {
-            len++;            
-            switch (chack[len])
-            {
-            case 'd':int_num++;
-                
-                len++;
-                break;
-            case 's':str_num++;
-                len++;
-                break;
-            case 'c':char_num++;
-                len++;
-                break;
-            default:
-                break;
-            }
-        }
-        
-        len++;
-    }
-
-    
-    printf("\nint(%d개): %s",int_num,int_);                       
-
-    printf("\nchar(%d개):%s",char_num,char_);
-
-    
-
-
-    freeTree(root);
-    
-    free(int_);    
-    free(char_);
-}
 
 int main() {
     
@@ -110,27 +15,12 @@ int main() {
 
     char*bu=FILE_C();
 
-    extractLines(bu, line1, line3);
+    
     printf("\n");
     printf("%s", bu);
-    printf("\n===================================================================================");
-    chack(bu);
+    printf("\n===================================================================================");           
     
-   
-
-   /* root = insertNode(root, "Apple");
-    root = insertNode(root, "Banana");
-    root = insertNode(root, "Cherry");
-    root = insertNode(root, "Date");
-    root = insertNode(root, "Fig");
-    */
-
-
-    printf("\n");
-    /*printf("이진 트리의 중위 순회 결과: ");
-    inorderTraversal(root);*/
-    printf("\n");
-
+    extractLines(bu,line1,line3);
     
     free(bu);
     return 0;

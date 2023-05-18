@@ -18,9 +18,6 @@
     <Text Include="상세.txt">
       <Filter>리소스 파일</Filter>
     </Text>
-    <Text Include="TEST.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="201827055_DB_First.c">
@@ -32,6 +29,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="sile.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Flie.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

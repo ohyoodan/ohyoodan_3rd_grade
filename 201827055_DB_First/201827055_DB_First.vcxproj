@@ -127,13 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="TEST.txt" />
     <Text Include="상세.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="201827055_DB_First.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Flie.h" />
     <ClInclude Include="sile.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
