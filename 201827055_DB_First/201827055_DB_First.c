@@ -7,7 +7,7 @@
 #include "Flie.h"
 
 
-static size_t size_i;
+
 //연산자 오버로딩
 
 int main() {
@@ -28,6 +28,13 @@ int main() {
     
     printf("%s",line1);
     printf("%s",line3);
+
+    struct Node* root=NULL;
+    root = insertNode(root, line1);
+    root = insertNode(root, line3);
+
+    inorderTraversal(root);
+
     free(bu);
     return 0;
 }
