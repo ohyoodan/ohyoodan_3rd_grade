@@ -1,1 +1,5 @@
-﻿  201827055_DB_First.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
+﻿  201827055_DB_First.c
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\sile.h(6,18): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(13,21): warning C4098: 'FILE_C': 'void' 함수에서 값을 반환하고 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(6,10): warning C4101: 'File_size' :참조되지 않은 지역 변수입니다.
+  201827055_DB_First.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe

@@ -60,21 +60,21 @@ char* readFromFile() {
     int ch;
 
     while ((ch = fgetc(fp)) != EOF) {
-        // 동적 메모리 할당
         if (index == buffer_size) {
-            buffer_size += 10;  // 적절한 크기로 조정 가능
-            buffer = realloc(buffer, buffer_size * sizeof(char));
-            if (buffer == NULL) {
+            buffer_size += 10;  // 필요한 만큼 크기를 조정할 수 있습니다.
+            char* new_buffer = (char*)realloc(buffer, buffer_size * sizeof(char));
+            if (new_buffer == NULL) {
                 printf("메모리 할당에 실패했습니다.\n");
                 fclose(fp);
                 return NULL;
             }
+            buffer = new_buffer;
         }
 
         buffer[index++] = ch;
     }
 
-    buffer = realloc(buffer, (index + 1) * sizeof(char));  // 문자열의 끝에 널 문자 추가
+    buffer = (char*)realloc(buffer, (index + 1) * sizeof(char));  // 문자열의 끝에 널 문자 추가
     buffer[index] = '\0';
 
     fclose(fp);
