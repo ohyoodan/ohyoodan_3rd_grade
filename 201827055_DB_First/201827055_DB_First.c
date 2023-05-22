@@ -6,6 +6,7 @@
 #include "sile.h"
 #include "Flie.h"
 
+
 static size_t size_i;
 //연산자 오버로딩
 
@@ -13,16 +14,20 @@ int main() {
     
     char* line1 = NULL;
     char* line3 = NULL;
-
-    char*bu=FILE_C();
+    char str_dem = '\n';
+    char* bu;
+    FILE_C();
+    bu = readFromFile();
 
     
     printf("\n");
     printf("%s", bu);
-    printf("\n===================================================================================");           
+    printf("\n===================================================================================\n");           
     
-    extractLines(bu,line1,line3);
+    splitString(bu,str_dem,&line1,&line3);
     
+    printf("%s",line1);
+    printf("%s",line3);
     free(bu);
     return 0;
 }

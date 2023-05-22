@@ -1,10 +1,1 @@
-﻿  201827055_DB_First.c
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(13,21): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(33,18): warning C4047: 'return': 'char *'의 간접 참조 수준이 'int'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(37,39): warning C4267: '함수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\Flie.h(38,40): warning C4267: '함수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(23,27): warning C4047: '함수': 'char **'의 간접 참조 수준이 'char'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(23,21): warning C4024: 'extractLines': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(23,34): warning C4047: '함수': 'char **'의 간접 참조 수준이 'char'과(와) 다릅니다.
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\201827055_DB_First\201827055_DB_First.c(23,28): warning C4024: 'extractLines': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
-  201827055_DB_First.vcxproj -> C:\Users\YUHAN\Source\Repos\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
+﻿  201827055_DB_First.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\201827055_DB_First.exe
