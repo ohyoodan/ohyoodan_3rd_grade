@@ -24,5 +24,4 @@ void splitString(const char* input,char dem, char** front, char** back) {
 }
 
 
-
 #endif

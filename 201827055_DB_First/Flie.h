@@ -20,31 +20,8 @@ void FILE_C() {
         fputc('\0', fp);
         fclose(fp);
     }
-   // fp = fopen(filename, "r");
-
-   // fseek(fp, 0, SEEK_END);//파일 포인터 지정한 위치로
-   // File_size = ftell(fp);//파일 포인터 현재 위치
-   // rewind(fp);// 파일 포인터 처음으로
-
-   // char* str = (char*)malloc((File_size) * sizeof(char));//포인터 
-   // if (str == NULL) {
-   //     printf("\n메모리 할당 실패");
-   //     fclose(fp);
-   //     return -1;
-   // }
-   // //fread(str, sizeof(char), File_size, fp);
-   // int byte;
-   // while ((byte = fgetc(fp)) != EOF) {
-   //     // byte 변수에 읽어온 데이터 활용
-   //     printf("읽은 데이터: %cX\n", byte);
-   // }
-   ///* fgets(str,  File_size, fp);
-   // fgets(str + strlen(str), File_size -strlen(str), fp);
-   // fgets(str + strlen(str), File_size - strlen(str), fp);
-   // */
-    fclose(fp);
-
-    //return str;
+   
+    fclose(fp);    
 }
 char* readFromFile() {
     FILE* fp = fopen("TEST.txt", "r");

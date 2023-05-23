@@ -18,7 +18,7 @@ int main() {
     char* bu;
     FILE_C();
     bu = readFromFile();
-
+    size_t size_ =sizeof(bu);
     
     printf("\n");
     printf("%s", bu);
@@ -29,9 +29,17 @@ int main() {
     printf("%s",line1);
     printf("%s",line3);
 
-    struct Node* root=NULL;
-    root = insertNode(root, line1);
-    root = insertNode(root, line3);
+    char line_1[256];
+    char line_3[256];
+
+    strcpy(line_1, line1);
+    strcpy(line_3, line3);
+    free(line1);
+    free(line3);
+    struct Node* root = NULL;
+
+    root = insertNode(root, line_1);
+    root = insertNode(root, line_3);
 
     inorderTraversal(root);
 
