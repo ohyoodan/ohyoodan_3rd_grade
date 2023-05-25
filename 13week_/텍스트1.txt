@@ -1,0 +1,80 @@
+C++로 개발할 친구들은 유니티와 유사한 구조로
+
+
+
+Scene이라는 클래스 (Unity 의 Scene)
+
+Object 라는 클래스 (Unity 의 GameObject)
+
+Component 라는 클래스 (Unity Inspector창에 있는 GameObject의 Component)
+
+
+
+세가지 객체를 만들고 이것을 유니티와 유사하게 동작하도록 구현해야합니다.
+
+
+
+
+
+설명을 간단히 하자면
+
+
+
+main함수는 기존에 해왔던대로 알아서들 GameLoop를 만드시고 ㅋㅋ
+
+
+
+Scene에는  
+
+1. ScreenBuffer(화면 배열)와 화면의 크기를 저장한다.
+
+2. Scene에서 사용하고 있는 Object의 리스트를 std::vector를 이용해서 만든다.(Unity의 Hierarchy와 동일 기능)
+
+참고자료 : https://github.com/Hanneoul/PP01/blob/master/PP06/main.cpp (작년도 프로그래밍 패턴 강의자료)
+
+3. Draw() 라는 함수를 만들어 Active한 Object의 Render를 호출하고 나서 
+
+ScreenBuffer를 cout으로 화면에 한번에 그린다.
+
+4. 화면을 clear해주는 기능(InitScreenBuf() 말고 ClearScreenBuf()이런 형식으로)이 있으면 좋다.
+
+
+
+Object는
+
+1. Render()에는 Scene에서 제공하는 ScreenBuffer를 매개변수로 받고, 거기다가 이것저것 그릴 내용을 그릴것 (Object의 모양을 그릴것)
+
+2. position x,y 값을 가지고 있어야 Object를 그릴 수 있음.
+
+3. scale과 rotation은 자유 
+
+4. 다양한 Object를 만드려면 이 클래스를 상속해서 만들면 됨.
+
+   SnakeBody : public Object
+
+   {};
+
+
+
+   이런식으로 만들면됨
+
+5. Object를 들고있는 Scene과 마찬가지로 Object는 Component 리스트를 들고있음
+
+
+
+추가 참고 자료입니다 
+
+- 1학년 C버전 스크린 버퍼 제작 샘플
+
+https://github.com/Hanneoul/Yuhan_C/tree/main/Project02(HW)
+
+
+
+- 작년도 프로그래밍 패턴 5주차 게임엔진 강의 내용
+
+https://github.com/Hanneoul/PP01/tree/master/PP05
+
+(이번학기 저희 강의자료와는 다릅니다. Component와 Scene없이 그냥 Object란걸 만들고 상속해서 GameObject를 GameLoop에서 직접 사용한 예시입니다. 개발에 참고만 하세요.)
+
+
+보고서는 추가된 형식이 있으니 꼭 확인하시고

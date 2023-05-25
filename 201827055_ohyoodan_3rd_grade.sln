@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "201827055_DB_First", "20182
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prime_number_multithreaded", "prime_number_multithreaded\prime_number_multithreaded.vcxproj", "{50FC4590-567B-4322-AE4C-BE7A1E0648FB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "13week_", "13week_\13week_.vcxproj", "{2D21DC31-7206-469C-B212-6833979C135B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{50FC4590-567B-4322-AE4C-BE7A1E0648FB}.Release|x64.Build.0 = Release|x64
 		{50FC4590-567B-4322-AE4C-BE7A1E0648FB}.Release|x86.ActiveCfg = Release|Win32
 		{50FC4590-567B-4322-AE4C-BE7A1E0648FB}.Release|x86.Build.0 = Release|Win32
+		{2D21DC31-7206-469C-B212-6833979C135B}.Debug|x64.ActiveCfg = Debug|x64
+		{2D21DC31-7206-469C-B212-6833979C135B}.Debug|x64.Build.0 = Debug|x64
+		{2D21DC31-7206-469C-B212-6833979C135B}.Debug|x86.ActiveCfg = Debug|Win32
+		{2D21DC31-7206-469C-B212-6833979C135B}.Debug|x86.Build.0 = Debug|Win32
+		{2D21DC31-7206-469C-B212-6833979C135B}.Release|x64.ActiveCfg = Release|x64
+		{2D21DC31-7206-469C-B212-6833979C135B}.Release|x64.Build.0 = Release|x64
+		{2D21DC31-7206-469C-B212-6833979C135B}.Release|x86.ActiveCfg = Release|Win32
+		{2D21DC31-7206-469C-B212-6833979C135B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

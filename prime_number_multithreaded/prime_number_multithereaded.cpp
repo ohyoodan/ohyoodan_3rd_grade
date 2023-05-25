@@ -6,8 +6,6 @@
 #include <mutex>
 
 
-
-
 using namespace std;
 const int MaxCount = 150000;
 const int ThreadCount = 4;
@@ -81,5 +79,5 @@ void main() {
 	auto duration = chrono::duration_cast<chrono::microseconds>(t1 - t0).count();
 	cout << "Took" << duration << "milliseconds" << endl;
 
-	PrintNumbers(primes);
+	//PrintNumbers(primes);
 }
