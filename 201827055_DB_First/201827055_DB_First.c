@@ -37,8 +37,9 @@ int main() {
     free(line1);
     free(line3);
     struct Node* root = NULL;
-
+    str_dem = ' ';
     root = insertNode(root, line_1);
+    
     root = insertNode(root, line_3);
 
     inorderTraversal(root);
