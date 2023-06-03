@@ -4,6 +4,8 @@ namespace GameEngine {
 
 	class GameLoop {
 
+		const int targetFPS = 30;	
+		const int frameDelay = 1000 / targetFPS;
 		bool start = false;
 		int score = 0;
 
@@ -22,13 +24,16 @@ namespace GameEngine {
 			init();
 
 			while (1) {
-				auto t0 = std::chrono::system_clock::now();
+				auto start = std::chrono::high_resolution_clock::now();
 				Input();
 				Update();
 				Render();
-				auto t1 = std::chrono::system_clock::now();
-				auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0).count();
-				std::cout << "Took" << duration << "milliseconds" << std::endl;
+				auto end = std::chrono::high_resolution_clock::now();
+				auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+				int remainingTIme = frameDelay - elapsedTime.count();
+				if (remainingTIme > 0) {
+					std::this_thread::sleep_for(std::chrono::microseconds(remainingTIme));
+				}
 			}
 
 		}

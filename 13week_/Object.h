@@ -2,8 +2,22 @@
 
 
 namespace GameEngine {
+	class Component {
+
+	public:	Component() {
+
+
+	}
+	public:	~Component() {
+
+	}
+
+	};
 
 	class Object {
+
+		int x;
+		int y;
 
 	public: Object() {
 
@@ -12,19 +26,10 @@ namespace GameEngine {
 
 	}
 	
-	//vector<Component> Compoentlist;
+		  std::vector<Component*> Compoentlist;
 
 	};
 
-	class Component {
-		
-	public:	Component() {
-
-		}
-	public:	~Component() {
-
-		}
-
-	};
+	
 	
 }
