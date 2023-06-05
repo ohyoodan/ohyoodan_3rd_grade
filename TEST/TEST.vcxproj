@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MyClass.cpp" />
     <ClCompile Include="st.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyClass.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

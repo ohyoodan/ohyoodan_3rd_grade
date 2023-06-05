@@ -109,6 +109,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -125,20 +126,21 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="GameLoop_.cpp" />
+    <ClCompile Include="Object_.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game_Loop.h" />
-    <ClInclude Include="Game_Loop.cpp" />
+    <ClInclude Include="GameLoop_.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="Object_.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="Object.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="텍스트.txt" />

@@ -15,16 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object_.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoop_.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,16 +35,13 @@
     <ClInclude Include="Scene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Game_Loop.cpp">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Game_Loop.h">
+    <ClInclude Include="Object_.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoop_.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

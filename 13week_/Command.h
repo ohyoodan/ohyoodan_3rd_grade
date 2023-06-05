@@ -1,11 +1,11 @@
 #pragma once
-#include "Object.h"
+#include "Object_.h"
 namespace GameEngine{
 
 	class Command {
 	public :
 		virtual ~Command();
-		virtual void exetude(Object& objcet);
+		virtual void exetude(Object_& objcet);
 
 	};
 
@@ -17,7 +17,7 @@ namespace GameEngine{
 
 	class JumpCmaand : public Command {
 	public:
-		virtual void execute(Object& object);
+		virtual void execute(Object_& object);
 	};
 
 }

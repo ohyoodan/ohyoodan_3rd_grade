@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include<iostream>
+#include "MyClass.hpp"
 
 // 콘솔 창의 색상을 변경하는 함수
 void SetConsoleColor(int text, int background) {
@@ -37,5 +38,14 @@ int main() {
         13 : 밝은 자주색
         14 : 밝은 노란색
         15 : 밝은 흰색*/
+
+
+    MyClass obj;  // MyClass 객체를 선언
+
+    obj.myMethod();  // MyClass 객체의 멤버 함수 호출
+
+    return 0;
+
+
     return 0;
 }

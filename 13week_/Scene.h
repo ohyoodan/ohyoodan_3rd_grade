@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <Windows.h>
-//#include "Object.h"
+#include "Object_.h"
 
 
 namespace GameEngine {
@@ -35,9 +35,26 @@ namespace GameEngine {
 	public: Title();
 
 	
-	public: ~Title();
+	~Title();
 
 	
+
+	};
+
+	class Game : public Scene {
+
+	public: Game();
+
+	~Game();
+
+
+	};
+
+	class Rank : public Scene {
+
+	public: Rank();
+
+	 ~Rank();
 
 	};
 
