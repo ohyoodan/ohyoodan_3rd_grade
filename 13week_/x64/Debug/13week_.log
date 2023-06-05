@@ -1,9 +1,16 @@
-﻿  main.cpp
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\main.cpp(5,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Game_Loop.h(33,23): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-          with
-          [
-              _Rep=__int64
-          ]
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\main.cpp(11,13): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  13week_.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\13week_.exe
+﻿Object.obj : error LNK2005: "public: __cdecl GameEngine::Object::Object(int const &,int const &,int const &,bool const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Object@GameEngine@@QEAA@AEBH00AEB_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: bool __cdecl GameEngine::Object::GetActive(void)const " (?GetActive@Object@GameEngine@@QEBA_NXZ)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: int __cdecl GameEngine::Object::GetX(void)const " (?GetX@Object@GameEngine@@QEBAHXZ)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: int __cdecl GameEngine::Object::GetY(void)const " (?GetY@Object@GameEngine@@QEBAHXZ)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: int __cdecl GameEngine::Object::GetZ(void)const " (?GetZ@Object@GameEngine@@QEBAHXZ)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl GameEngine::Object::Getname(void)const " (?Getname@Object@GameEngine@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: void __cdecl GameEngine::Object::SetActive(bool)" (?SetActive@Object@GameEngine@@QEAAX_N@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: void __cdecl GameEngine::Object::SetX(int)" (?SetX@Object@GameEngine@@QEAAXH@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: void __cdecl GameEngine::Object::SetY(int)" (?SetY@Object@GameEngine@@QEAAXH@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Object.obj : error LNK2005: "public: void __cdecl GameEngine::Object::SetZ(int)" (?SetZ@Object@GameEngine@@QEAAXH@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Scene.obj : error LNK2005: "public: void __cdecl GameEngine::Scene::Draw(void)" (?Draw@Scene@GameEngine@@QEAAXXZ)이(가) main.obj에 이미 정의되어 있습니다.
+Scene.obj : error LNK2005: "public: void __cdecl GameEngine::Scene::ObjectAdd(int &,int &,int &,class GameEngine::Object)" (?ObjectAdd@Scene@GameEngine@@QEAAXAEAH00VObject@2@@Z)이(가) main.obj에 이미 정의되어 있습니다.
+Scene.obj : error LNK2005: "public: void __cdecl GameEngine::Scene::clear(void)" (?clear@Scene@GameEngine@@QEAAXXZ)이(가) main.obj에 이미 정의되어 있습니다.
+main.obj : error LNK2019: "public: __cdecl GameEngine::Object::~Object(void)" (??1Object@GameEngine@@QEAA@XZ)"public: void * __cdecl GameEngine::Object::`scalar deleting destructor'(unsigned int)" (??_GObject@GameEngine@@QEAAPEAXI@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+Scene.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __cdecl GameEngine::Object::~Object(void)" (??1Object@GameEngine@@QEAA@XZ)
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\13week_.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

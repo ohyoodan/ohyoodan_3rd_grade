@@ -1,4 +1,13 @@
 #pragma once
+#include<iostream>
+#include <vector>//자료형
+#include <windows.h>
+#include <chrono>// 시간 
+#include <thread>// 스레드
+#include <fstream>//파일
+#include <string>// 문자열
+#include"Object.cpp"
+#include"Scene.cpp"
 using namespace std;
 namespace GameEngine {
 
