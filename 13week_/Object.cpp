@@ -21,5 +21,9 @@ namespace GameEngine {
 	void Object::SetZ(int Z) { x = Z; }
 	void Object::SetActive(bool Active) { active = Active; }
 	
+	Object::~Object() {};
 
+	void Object::ComponentAdd(Component* Componet_) {
+		Compoentlist.push_back(Componet_);
+	}
 }

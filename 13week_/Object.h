@@ -28,7 +28,7 @@ namespace GameEngine {
 		int x;
 		int y;
 		int z;
-		std::vector<GameEngine::Component> Compoentlist;
+		std::vector<GameEngine::Component*> Compoentlist;
 
 					
 	public: Object(const int &X, const int &Y, const int &Z, const bool &Active , const std::string &Name);				
@@ -46,7 +46,9 @@ namespace GameEngine {
 		  void SetZ(int Z);
 		  void SetActive(bool Active);
 		  
+		  void ComponentAdd(Component* Componet_);
 
+		  
 	};
 
 	

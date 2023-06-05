@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Object.h"
+#include <Windows.h>
+//#include "Object.h"
 
 
 namespace GameEngine {
@@ -12,19 +13,17 @@ namespace GameEngine {
 		int col;
 		int row;
 		int z_z;
-		std::vector<GameEngine::Object> ObjectList;
+		std::vector<GameEngine::Object*> ObjectList;
 
 	public: Scene();
 
 
 	public: ~Scene();
 
-
-
 		  void Draw();
 
 
-		  void ObjectAdd(int& X, int& Y, int& Z, Object Obj);
+		  void ObjectAdd(int& X, int& Y, int& Z, Object* Obj);
 
 
 		  void clear();

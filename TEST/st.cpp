@@ -1,26 +1,41 @@
-#include <iostream>
-#include <chrono>
-#include <thread>
-#include <windows.h>
+#include <Windows.h>
+#include<iostream>
+
+// 콘솔 창의 색상을 변경하는 함수
+void SetConsoleColor(int text, int background) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    int color = text + (background * 16);
+    SetConsoleTextAttribute(hConsole, color);
+}
 
 int main() {
-    const int targetFPS = 30;
-    const int frameDelay = 1000 / targetFPS;
+    // 예시: 텍스트를 빨간색, 배경을 검정색으로 설정
+    SetConsoleColor(12, 0);
 
-    while (true) {
-        auto start = std::chrono::high_resolution_clock::now();
+    // 색상이 변경된 상태로 출력
+    std::cout << "Hello, World!" << std::endl;
+    SetConsoleColor(13, 1);
+    std::cout << "Hello, World!" << std::endl;
+    // 기본 색상으로 복원
+    SetConsoleColor(7, 0);
 
-        // FPS 제한을 적용할 로직 수행
-        // ...
 
-        auto end = std::chrono::high_resolution_clock::now();
-        auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-
-        int remainingTime = frameDelay - elapsedTime.count();
-        if (remainingTime > 0) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(remainingTime));
-        }
-    }
-
+    
+    /*0: 검정색
+        1 : 파란색
+        2 : 초록색
+        3 : 청록색
+        4 : 빨간색
+        5 : 자주색
+        6 : 노란색
+        7 : 흰색
+        8 : 회색
+        9 : 밝은 파란색
+        10 : 밝은 초록색
+        11 : 밝은 청록색
+        12 : 밝은 빨간색
+        13 : 밝은 자주색
+        14 : 밝은 노란색
+        15 : 밝은 흰색*/
     return 0;
 }

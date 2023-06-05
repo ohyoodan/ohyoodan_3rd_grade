@@ -1,35 +1,24 @@
-#pragma once
-#include<iostream>
-#include <vector>//자료형
-#include <windows.h>
-#include <chrono>// 시간 
-#include <thread>// 스레드
-#include <fstream>//파일
-#include <string>// 문자열
-#include"Object.cpp"
-#include"Scene.cpp"
+
+#include "Game_Loop.h"
+
 using namespace std;
 namespace GameEngine {
+	class Scene;
 
-	class GameLoop {
+	class Object;
 
-		const int targetFPS = 30;	
-		const int frameDelay = 1000 / targetFPS;
-		bool start = false;
-		int score = 0;
-
-		enum state {
-		Title,
-		};
-
-		public: GameLoop() {
-
+	
+		GameLoop::GameLoop(): targetFPS(30),frameDelay(1000 / targetFPS){
+			score = 0;
+			Gamestate = Title;
+			start = false;
+			
 		}
-		public:~GameLoop() {
+		GameLoop::~GameLoop() {
 
 		}
 
-		void start_L() {
+		void GameLoop::start_L(){
 			init();
 
 			while (1) {
@@ -47,27 +36,42 @@ namespace GameEngine {
 
 		}
 
-		void init() {
+		void GameLoop::init() {
 			
-			
+			SceneCreate(Gamestate);
 
 		}
 
-		void Update() {
+		void GameLoop::SceneCreate(state state) {
+
+			switch(state) {
+			case Title: viewScene = new GameEngine::Title(); break;
+
+
+			}
+			
+		}
+
+		void GameLoop::Update() {
 
 
 		}
 
-		void Render() {
+		void GameLoop::Render() {
 			
 		}
 		
-		void Input() {
+		void GameLoop::Input() {
 
 		}
 
-
-	};
+		
+		void GameLoop::ScoreSet(int Score) {
+			score = Score;
+		}
+		int GameLoop::ScoreGet() const{
+			return score;
+		}
 
 
 }

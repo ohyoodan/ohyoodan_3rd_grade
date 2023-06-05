@@ -1,0 +1,8 @@
+﻿  Command.cpp
+  main.cpp
+  Object.cpp
+  Scene.cpp
+main.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __cdecl GameEngine::GameLoop::start_L(void)" (?start_L@GameLoop@GameEngine@@QEAAXXZ)
+main.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __cdecl GameEngine::GameLoop::~GameLoop(void)" (??1GameLoop@GameEngine@@QEAA@XZ)
+main.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __cdecl GameEngine::GameLoop::GameLoop(void)" (??0GameLoop@GameEngine@@QEAA@XZ)
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Release\13week_.exe : fatal error LNK1120: 3개의 확인할 수 없는 외부 참조입니다.
