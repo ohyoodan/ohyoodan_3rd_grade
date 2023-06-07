@@ -13,11 +13,20 @@ namespace GameEngine {
 	class GameLoop_
 	{
 
-
+		int g_nScreenIndex;
 		const int targetFPS;
 		const int frameDelay;
-		bool start;
+		bool start_Loop;
 		int score;
+		
+		
+
+
+		HANDLE hOut;
+		CONSOLE_CURSOR_INFO cInfo;
+
+		HANDLE g_hScreen[2];
+
 
 		enum state {
 			Title,
@@ -46,15 +55,20 @@ namespace GameEngine {
 		void ScoreSet(int Score);
 
 
+		void GameEnd();
 
+		void ScreenClear();
 
+		void ScreenFlipping();
 
+		void Cursor_Active(bool visible);
 
+		void ScreenRelease();
 
+		void ScreenPrint(int x, int y, std::string& string);
+		
 
 	};
-
-
 
 
 }

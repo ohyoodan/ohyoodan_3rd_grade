@@ -1,12 +1,11 @@
-﻿  Command.cpp
-  GameLoop_.cpp
-C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(24,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  GameLoop_.cpp
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(31,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
           with
           [
               _Rep=__int64
           ]
-  Object_.cpp
-  Scene.cpp
-  main.cpp
-  코드를 생성하고 있습니다...
-  13week_.vcxproj -> C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\x64\Debug\13week_.exe
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(127,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(127,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(128,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(136,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  13week_.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\13week_.exe

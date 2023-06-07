@@ -37,7 +37,7 @@ namespace GameEngine {
 
 	//=================================================================================================
 
-	Player::Player()		
+	Player::Player():maxspeed(6)
 	{
 		SetX(-25);
 		SetY(-15);
@@ -45,6 +45,8 @@ namespace GameEngine {
 		SetSize(4);
 		SetName("Player");
 		SetSpeed(3);
+		jumping = false;
+		gravity = false;
 	}
 	Player::~Player() {
 
@@ -56,6 +58,34 @@ namespace GameEngine {
 
 	int Player::GetSpeed() const{
 		return speed;
+	}
+
+	void Player::Jump() {
+		int X = GetX();
+		int Y = GetY();
+		if (X == -25 && Y == -15) {
+			jumping = true;
+		}		
+		if (jumping == true) {
+			SetX(GetX() + 1);
+			SetY(GetY() + 1);
+		}
+		else if (gravity == true) {
+			SetX(GetX() - 1);
+			SetY(GetY() - 1);
+		}		
+		
+		if ((10< X && 10<Y)&&gravity==false) {
+			Jump();
+		}
+		else if ((X == -25 && Y == 15) && gravity == true) {
+			gravity = false;
+		}
+		else {
+			gravity = true;			
+			Jump();
+		}
+		
 	}
 	
 	//=================================================================================================

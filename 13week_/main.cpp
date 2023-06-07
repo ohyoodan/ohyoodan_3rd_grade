@@ -2,7 +2,10 @@
 using namespace GameEngine;
 
 int main() {
-	system("mode con:cols=100 lines=20 | title 고구마");//col = 100; row= 20 ;
+		
+	//system("cls"); //화면 초기화
+	system("mode con:cols=101 lines=20 | title 직사각형 게임");//col = 100; row= 20 ;
+	
 	GameLoop_ GL;
 	GL.startLoop_();
 
