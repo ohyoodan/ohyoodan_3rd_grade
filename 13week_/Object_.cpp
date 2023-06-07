@@ -44,23 +44,30 @@ namespace GameEngine {
 		SetZ(0);
 		SetSize(4);
 		SetName("Player");
+		SetSpeed(3);
 	}
 	Player::~Player() {
 
 	}
+
+	void Player::SetSpeed(int Speed) {
+
+	}
+
+	int Player::GetSpeed() const{
+		return speed;
+	}
 	
 	//=================================================================================================
 
-	void Rander::SetConsoleColor(int text, int background) {
+	void Rander::SetConsoleColor(int Text, int Background) {
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		int color = text + (background * 16);
+		int color = text + (Background * 16);
 		SetConsoleTextAttribute(hConsole, color);
 	}
 
 	void Rander::ReSetConsoleColor() {
-
 		SetConsoleColor(7, 0);
-
 	}
 
 	void Rander::Draw() {
@@ -68,13 +75,29 @@ namespace GameEngine {
 
 	}
 
+	Rander::~Rander() {
+
+
+	}
+
 	//=================================================================================================
 
-	Collider::Collider(Object_ &i) {
 	
+
+	Collider::Collider(Object_ &i) {
+		size=i.GetSize();
 	};
 
 	Collider::~Collider() {};
+
+	//=================================================================================================
+
+	Component::Component() { };
+	Component::~Component() { };
+
+	
+	//=================================================================================================
+
 
 
 

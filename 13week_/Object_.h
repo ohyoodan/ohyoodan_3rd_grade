@@ -9,7 +9,6 @@ namespace GameEngine {
 	class Component {
 
 	public:	Component();
-
 		  ~Component();
 
 	};
@@ -46,25 +45,37 @@ namespace GameEngine {
 
 		  void ComponentAdd(Component* Componet_);
 
-		  
-
 	};
 	
-	class Player :
-		public Object_
+	class Player : public Object_
 	{
+		int speed;
+
 	public: 
-		Player();
-		
+		Player();		
 		  
 		~Player();
 		  
+		int GetSpeed() const;
+		void SetSpeed(int Speed);
 
 	};
 
-	class Rander :public Component {
+	class Rander : public Component {
 		
-		void SetConsoleColor(int text, int background);
+		int text;
+		int background;
+
+	public:
+		Rander(int Text, int Background) {
+
+			text = Text;
+			background = Background;
+
+		}		
+		~Rander();
+
+		void SetConsoleColor(int Text, int Background);
 
 		void ReSetConsoleColor();
 
@@ -73,13 +84,12 @@ namespace GameEngine {
 	};
 
 	class Collider :public Component {
+		
 		int size;
 
 		Collider(Object_ &i);
 
 		~Collider();
-
-
 
 	};
 }

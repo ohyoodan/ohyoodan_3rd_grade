@@ -4,7 +4,7 @@
 namespace GameEngine {
 
 
-	void Scene::Draw() {
+	void Scene::Draw() {		
 		
 	}
 
