@@ -73,6 +73,7 @@ namespace GameEngine {
 	};
 
 	class Collider :public Component {
+		int size;
 
 		Collider(Object_ &i);
 
