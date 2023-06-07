@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Scene.cpp">
+    <ClCompile Include="Command.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Command.cpp">
+    <ClCompile Include="GameLoop_.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -27,7 +27,7 @@
     <ClCompile Include="Object_.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GameLoop_.cpp">
+    <ClCompile Include="Scene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

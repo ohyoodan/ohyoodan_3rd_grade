@@ -7,8 +7,12 @@ namespace GameEngine {
 		y = Y;
 		z = Z;
 		active = Active;
+		size = Size;
 		name = Name;
 	}
+	Object_::Object_() {};
+		
+	
 
 	int Object_::GetX() const { return x; }
 	int Object_::GetY() const { return y; }
@@ -22,29 +26,55 @@ namespace GameEngine {
 	void Object_::SetZ(int Z) { x = Z; }
 	void Object_::SetSize(int Size) { size = Size; }
 	void Object_::SetActive(bool Active) { active = Active; }
-
+	void Object_::SetName(std::string Name) { name = Name; }
 	Object_::~Object_() {};
 
 	void Object_::ComponentAdd(Component* Componet_) {
 		Compoentlist.push_back(Componet_);
 	}
 
-	void Object_::SetConsoleColor(int text, int background) {
+	
+
+	//=================================================================================================
+
+	Player::Player()		
+	{
+		SetX(-25);
+		SetY(-15);
+		SetZ(0);
+		SetSize(4);
+		SetName("Player");
+	}
+	Player::~Player() {
+
+	}
+	
+	//=================================================================================================
+
+	void Rander::SetConsoleColor(int text, int background) {
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		int color = text + (background * 16);
 		SetConsoleTextAttribute(hConsole, color);
 	}
 
+	void Rander::ReSetConsoleColor() {
+
+		SetConsoleColor(7, 0);
+
+	}
+
+	void Rander::Draw() {
+
+
+	}
 
 	//=================================================================================================
 
-	Player::~Player() {
-
-	}
-	Player::Player() {
-
-	}
+	Collider::Collider(Object_ &i) {
 	
+	};
+
+	Collider::~Collider() {};
 
 
 

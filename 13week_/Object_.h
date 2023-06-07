@@ -28,7 +28,7 @@ namespace GameEngine {
 		int size;
 
 	public: Object_(const int& X, const int& Y, const int& Z, const bool& Active,const int &Size, const std::string& Name);
-
+		  Object_();
 		  ~Object_();
 		  int GetX() const;
 		  int GetY() const;
@@ -42,22 +42,45 @@ namespace GameEngine {
 		  void SetZ(int Z);
 		  void SetSize(int Size);
 		  void SetActive(bool Active);
+		  void SetName(std::string Name);
 
 		  void ComponentAdd(Component* Componet_);
 
-		  void SetConsoleColor(int text, int background);
+		  
 
 	};
 	
 	class Player :
 		public Object_
 	{
-	public: Player();
-		  ~Player();
+	public: 
+		Player();
+		
+		  
+		~Player();
 		  
 
 	};
 
+	class Rander :public Component {
+		
+		void SetConsoleColor(int text, int background);
+
+		void ReSetConsoleColor();
+
+		void Draw();
+
+	};
+
+	class Collider :public Component {
+
+		Collider(Object_ &i);
+
+		~Collider();
+
+
+
+	};
 }
 
 
