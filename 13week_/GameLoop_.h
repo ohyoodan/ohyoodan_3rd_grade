@@ -27,13 +27,6 @@ namespace GameEngine {
 
 		HANDLE g_hScreen[2];
 
-
-		enum state {
-			Title,
-			Game,
-			Rank,
-			Exit,
-		};
 		GameEngine::Scene* viewScene;
 
 		state Gamestate;

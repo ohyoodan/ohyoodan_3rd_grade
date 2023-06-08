@@ -1,11 +1,30 @@
 ﻿  GameLoop_.cpp
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(31,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(32,9): error C3646: 'Gamestate': 알 수 없는 재정의 지정자입니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(32,18): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(44,20): error C2061: 구문 오류: 식별자 'state'
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(8,2): error C2065: 'Gamestate': 선언되지 않은 식별자입니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(33,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
           with
           [
               _Rep=__int64
           ]
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(127,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(127,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(128,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(136,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  13week_.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\13week_.exe
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(44,14): error C2065: 'Gamestate': 선언되지 않은 식별자입니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(48,17): error C2511: 'void GameEngine::GameLoop_::SceneCreate(state)': 오버로드된 멤버 함수가 'GameEngine::GameLoop_'에 없습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(13,8): message : 'GameEngine::GameLoop_' 선언을 참조하십시오.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(51,14): error C2597: 비정적 멤버 'GameEngine::GameLoop_::viewScene'에 대한 참조가 잘못되었습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(30,22): message : 'GameEngine::GameLoop_::viewScene' 선언을 참조하십시오.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(52,13): error C2597: 비정적 멤버 'GameEngine::GameLoop_::viewScene'에 대한 참조가 잘못되었습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(30,22): message : 'GameEngine::GameLoop_::viewScene' 선언을 참조하십시오.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(53,13): error C2597: 비정적 멤버 'GameEngine::GameLoop_::viewScene'에 대한 참조가 잘못되었습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(30,22): message : 'GameEngine::GameLoop_::viewScene' 선언을 참조하십시오.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(54,13): error C2597: 비정적 멤버 'GameEngine::GameLoop_::viewScene'에 대한 참조가 잘못되었습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(30,22): message : 'GameEngine::GameLoop_::viewScene' 선언을 참조하십시오.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(119,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(119,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(120,81): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(128,81): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(32,9): error C3646: 'Gamestate': 알 수 없는 재정의 지정자입니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(32,18): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\YUHAN\source\repos\ohyoodan_3rd_grade\13week_\GameLoop_.h(44,20): error C2061: 구문 오류: 식별자 'state'
+  코드를 생성하고 있습니다...

@@ -135,12 +135,15 @@
     <ClCompile Include="Object_.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SceneHandle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameEnum.h" />
     <ClInclude Include="GameLoop_.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Object_.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneHandle.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="텍스트.txt" />

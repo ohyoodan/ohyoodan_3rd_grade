@@ -26,15 +26,15 @@ namespace GameEngine {
 	//=============================================================================================
 
 
-	Title::Title():Menu(Game) {
+	Title_::Title_():Menu(Game) {
 		
 	}
-	Title::~Title() {
+	Title_::~Title_() {
 
 
 	}
 
-	void Title::Up() {
+	void Title_::Up() {
 		switch (Menu)
 		{
 		case Game: Menu == Game; break;
@@ -43,7 +43,7 @@ namespace GameEngine {
 		}
 	}
 
-	void Title::Down() {
+	void Title_::Down() {
 		switch (Menu)
 		{
 		case Game: Menu == Rank; break;
@@ -53,7 +53,7 @@ namespace GameEngine {
 		}
 	}
 
-	void Title::Enter() {
+	void Title_::Enter() {
 		switch (Menu)
 		{
 		case Game: break;
@@ -62,7 +62,7 @@ namespace GameEngine {
 		}
 	}
 
-	std::string Title::Draw(){
+	std::string Title_::Draw(){
 		std::string str;
 		switch (Menu)
 		{
@@ -71,15 +71,15 @@ namespace GameEngine {
 		case Exit:Exit_R();  break;
 		}
 	}
-	std::string Title::Game_R() {
+	std::string Title_::Game_R() {
 		return "Game\nRank\nExit\n";
 	}
 
-	void Title::Rank_R() {
+	void Title_::Rank_R() {
 
 	}
 
-	void Title::Exit_R() {
+	void Title_::Exit_R() {
 
 
 	}
@@ -87,12 +87,12 @@ namespace GameEngine {
 	//=============================================================================================
 
 
-	Game::Game() {
+	Game_::Game_() {
 
 
 
 	}
-	Game::~Game() {
+	Game_::~Game_() {
 
 
 
@@ -100,10 +100,10 @@ namespace GameEngine {
 
 	//===============================================================================================
 
-	Rank::Rank() {
+	Rank_::Rank_() {
 
 	}
-	Rank::~Rank() {
+	Rank_::~Rank_() {
 
 	}
 }

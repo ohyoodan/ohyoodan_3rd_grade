@@ -1,4 +1,6 @@
 #include "GameLoop_.h"
+#include "SceneHandle.h"
+#include "GameEnum.h"
 
 using namespace GameEngine;
 GameLoop_::GameLoop_() : targetFPS(30), frameDelay(1000 / targetFPS) {
@@ -38,7 +40,7 @@ void GameLoop_::startLoop_() {
 }
 
 void GameLoop_::init() {
-
+	SceneHandle* i;
 	SceneCreate(Gamestate);		
 	Cursor_Active(false);
 }
@@ -46,13 +48,10 @@ void GameLoop_::init() {
 void GameLoop_::SceneCreate(state state) {
 
 	switch (state) {
-	case Title: viewScene = new GameEngine::Title(); break;
-	case Game: viewScene = new GameEngine::Game(); break;
-	case Rank: viewScene = new GameEngine::Rank(); break;
+	case Title: viewScene = new GameEngine::Title_; break;
+	case Game: viewScene = new GameEngine::Game_; break;
+	case Rank: viewScene = new GameEngine::Rank_; break;
 	case Exit: viewScene = NULL; break;
-
-
-
 	}
 
 }

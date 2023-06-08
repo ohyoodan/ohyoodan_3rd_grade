@@ -36,7 +36,7 @@ namespace GameEngine {
 
 	};
 
-	class Title:public Scene{
+	class Title_:public Scene{
 
 		enum Menu {
 			Game,
@@ -45,10 +45,10 @@ namespace GameEngine {
 		};
 
 		Menu Menu;
-	public: Title();
+	public: Title_();
 
 	
-	~Title();
+	~Title_();
 
 	void Enter();
 		
@@ -74,20 +74,20 @@ namespace GameEngine {
 
 	};
 
-	class Game : public Scene {
+	class Game_: public Scene {
 
-	public: Game();
+	public: Game_();
 
-	~Game();
+	~Game_();
 
 
 	};
 
-	class Rank : public Scene {
+	class Rank_ : public Scene {
 
-	public: Rank();
+	public: Rank_();
 
-	 ~Rank();
+	 ~Rank_();
 
 	};
 
