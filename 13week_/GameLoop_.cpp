@@ -1,5 +1,5 @@
+
 #include "GameLoop_.h"
-#include "SceneHandle.h"
 #include "GameEnum.h"
 
 using namespace GameEngine;
@@ -7,15 +7,12 @@ GameLoop_::GameLoop_() : targetFPS(30), frameDelay(1000 / targetFPS) {
 	score = 0;
 	Gamestate = Title;
 	start_Loop = true;
-	viewScene = NULL;
-
+	
 	//커서 설정 핸들
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);	
 
-	//이중 화면 버퍼
-	g_hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
-	g_hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
-	
+	//RenderHandle
+	renderHandle = GameEngine::RenderHandle();
 }
 GameLoop_::~GameLoop_() {
 
@@ -40,32 +37,32 @@ void GameLoop_::startLoop_() {
 }
 
 void GameLoop_::init() {
-	SceneHandle* i;
-	SceneCreate(Gamestate);		
+	//std::thread inputThread(InputThread);
+	SetConsoleWindowSize();
+	//SceneCreate(Gamestate);		
 	Cursor_Active(false);
+	//renderHandle.ChangeScene(Gamestate);
 }
 
 void GameLoop_::SceneCreate(state state) {
 
 	switch (state) {
-	case Title: viewScene = new GameEngine::Title_; break;
-	case Game: viewScene = new GameEngine::Game_; break;
-	case Rank: viewScene = new GameEngine::Rank_; break;
-	case Exit: viewScene = NULL; break;
+	case Title:  break;
+	case Game:  break;
+	case Rank:  break;
+	case Exit:  break;
 	}
 
 }
 
 void GameLoop_::Update() {
-
-
+	renderHandle.Set_ObjectUpdate();
 }
 
 void GameLoop_::Render() {
-	ScreenClear();
-	std::string str = viewScene->Draw();
-	ScreenPrint(48, 10,str );
-	ScreenFlipping();
+	renderHandle.Drawing(hOut);
+	renderHandle.ScreenFlipping();
+	
 }
 
 void GameLoop_::Input() {
@@ -82,21 +79,6 @@ int GameLoop_::ScoreGet() const {
 
 void GameLoop_::GameEnd() {
 
-	ScreenRelease();
-
-}
-
-void GameLoop_::ScreenClear()
-{
-	COORD Coor = { 0, 0 };
-	DWORD dw;
-	FillConsoleOutputCharacter(g_hScreen[g_nScreenIndex], ' ', 101 * 20, Coor, &dw);
-}
-
-void GameLoop_::ScreenFlipping() {
-	
-		SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
-		g_nScreenIndex = !g_nScreenIndex;
 	
 }
 
@@ -107,23 +89,23 @@ void GameLoop_::Cursor_Active(bool visible) {
 }
 
 
+void GameLoop_:: SetConsoleWindowSize() {	
+	SMALL_RECT windowRect;
+	windowRect.Left = 0;
+	windowRect.Top = 0;
+	windowRect.Right = BUFFER_WIDTH - 1;
+	windowRect.Bottom = BUFFER_HEIGHT - 1;
 
-void GameLoop_::ScreenRelease()
-{
-	CloseHandle(g_hScreen[0]);
-	CloseHandle(g_hScreen[1]);
+	COORD bufferSize;
+	bufferSize.X = BUFFER_WIDTH;
+	bufferSize.Y = BUFFER_HEIGHT;
+
+	SetConsoleWindowInfo(hOut, TRUE, &windowRect);
+	SetConsoleScreenBufferSize(hOut, bufferSize);
 }
 
-void GameLoop_::ScreenPrint(int x,int y, std::string& string) {
-	DWORD dw;
-	COORD CursorPosition = { x, y };
-	WriteFile(g_hScreen[g_nScreenIndex], string.c_str(), string.length(), &dw, NULL);
-	CursorPosition.X = x + 1;
-	CursorPosition.Y =y+1;
-	SetConsoleCursorPosition(g_hScreen[g_nScreenIndex], CursorPosition);	
-	int color = 1 + (15 * 16);
-	SetConsoleTextAttribute(g_hScreen[g_nScreenIndex], color);
+state GameLoop_::GamestateGet() const {
 
-	
-	WriteFile(g_hScreen[g_nScreenIndex], string.c_str(), string.length(), &dw, NULL);
+	return Gamestate;
+
 }

@@ -9,35 +9,34 @@
 #include "Scene.h"
 #include "Object_.h"
 #include "Command.h"
+#include "GameEnum.h"
+#include "RenderHandle.h"
+
+
 namespace GameEngine {
+	
 	class GameLoop_
 	{
-
-		int g_nScreenIndex;
+	private:
+		
 		const int targetFPS;
 		const int frameDelay;
 		bool start_Loop;
 		int score;
-		
-		
-
-
+				
 		HANDLE hOut;
-		CONSOLE_CURSOR_INFO cInfo;
-
-		HANDLE g_hScreen[2];
-
-		GameEngine::Scene* viewScene;
-
+		CONSOLE_CURSOR_INFO cInfo;		
 		state Gamestate;
+		
+		GameEngine::RenderHandle renderHandle;
 
-	public:
+	public:		
 		GameLoop_();
 		~GameLoop_();
 
 		void startLoop_();
 		int ScoreGet() const;
-
+		state GamestateGet() const;
 
 	private:
 		void init();
@@ -46,20 +45,13 @@ namespace GameEngine {
 		void Render();
 		void Input();
 		void ScoreSet(int Score);
-
+		
 
 		void GameEnd();
-
-		void ScreenClear();
-
-		void ScreenFlipping();
-
-		void Cursor_Active(bool visible);
-
-		void ScreenRelease();
-
-		void ScreenPrint(int x, int y, std::string& string);
 		
+		void Cursor_Active(bool visible);
+		
+		void SetConsoleWindowSize();
 
 	};
 

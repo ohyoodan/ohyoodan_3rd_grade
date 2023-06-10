@@ -5,7 +5,7 @@
 #include <thread>
 
 const int BUFFER_WIDTH = 80;
-const int BUFFER_HEIGHT = 25;
+const int BUFFER_HEIGHT = 16;
 const int BUFFER_DEPTH = 10;  // ºø¿« ±Ì¿Ã (z√‡)
 
 struct Cell {

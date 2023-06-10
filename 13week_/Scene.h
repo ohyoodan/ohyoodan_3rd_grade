@@ -4,35 +4,41 @@
 #include <Windows.h>
 #include <iostream>
 #include "Object_.h"
-
+#include "GameEnum.h"
 
 namespace GameEngine {
 	
 	class Object;
 
 	class Scene {
-		int col;
-		int row;
-		int z_z;
-		std::vector<GameEngine::Object*> ObjectList;
+	protected:
+		std::vector<GameEngine::Object*> ObjectList;	
+		CHAR_INFO scene_Object[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];//화면 셋팅
 		
-		
+		bool ArrowKey;		
 
+		CHAR_INFO buffer1[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
 		
-
+		
 
 	public: Scene();
 
 
-	public: ~Scene();
+	~Scene();
 
-		  virtual std::string Draw();
+		  virtual CHAR_INFO(*DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
 
 
 		  void ObjectAdd(int& X, int& Y, int& Z, Object* Obj);
 
 
 		  void clear();
+
+		  CHAR_INFO(&GetBuffer())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
+		  
+		  WORD Color(int text,int background);
+		  
+		  
 
 	};
 
@@ -62,10 +68,10 @@ namespace GameEngine {
 
 
 
-	std::string Draw() override;
-		 
-	private:
-	std::string Game_R();
+	CHAR_INFO(*DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH] override;
+	
+	
+	void Game_R();
 
 	void Rank_R();
 
@@ -83,7 +89,7 @@ namespace GameEngine {
 
 	};
 
-	class Rank_ : public Scene {
+	class Rank_: public Scene {
 
 	public: Rank_();
 

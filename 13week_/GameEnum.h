@@ -8,9 +8,6 @@ enum state {
 	Exit,
 };
 
-typedef struct Cell {
-	char character;
-	int zIndex;
-	int color;
-	int backcolor;
-} Cell;
+static const int BUFFER_WIDTH = 80;
+static const int BUFFER_HEIGHT = 20;
+static const int BUFFER_DEPTH = 5;

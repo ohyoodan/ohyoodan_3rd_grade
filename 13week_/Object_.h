@@ -65,7 +65,7 @@ namespace GameEngine {
 		int GetSpeed() const;
 		void SetSpeed(int Speed);
 
-		void Jump();//아니 생각해보니 y만 수정하면 되잖아 슈퍼마리오도 아니고 x를 왜 건들어
+		void Jump();
 
 	};
 

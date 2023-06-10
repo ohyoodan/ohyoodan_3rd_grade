@@ -9,7 +9,7 @@
 #include <thread>
 
 const int BUFFER_WIDTH = 80;
-const int BUFFER_HEIGHT = 25;
+const int BUFFER_HEIGHT = 20;
 
 char buffer1[BUFFER_HEIGHT][BUFFER_WIDTH];
 char buffer2[BUFFER_HEIGHT][BUFFER_WIDTH];
@@ -92,7 +92,7 @@ int main() {
 
     obj.myMethod();  // MyClass °´Ã¼ÀÇ ¸â¹ö ÇÔ¼ö È£Ãâ
 
-    while (true) {
+   /* while (true) {
         auto start = std::chrono::high_resolution_clock::now();
         UpdateBuffer();
         Render();
@@ -104,7 +104,9 @@ int main() {
             std::this_thread::sleep_for(std::chrono::microseconds(remainingTIme));
         }
     }
-    
+    */
+
+
     return 0;
     
 }
