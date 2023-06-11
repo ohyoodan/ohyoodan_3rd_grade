@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>Tree.h</FILENAME>
+      <LINE>12</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>NULL 포인터 'newNode'을(를) 역참조하고 있습니다. </DESCRIPTION>
+    <FUNCTION>createNode</FUNCTION>
+    <DECORATED>createNode</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Tree.h</FILENAME>
+        <LINE>11</LINE>
+        <COLUMN>17</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode'은(는) NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Tree.h</FILENAME>
+        <LINE>12</LINE>
+        <COLUMN>4</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode'이(가) 역참조되었지만 여전히 NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>sile.h</FILENAME>
+      <LINE>19</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>NULL 포인터 '*front'을(를) 역참조하고 있습니다. </DESCRIPTION>
+    <FUNCTION>splitString</FUNCTION>
+    <DECORATED>splitString</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>5</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>6</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>9</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>9</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>17</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*front'은(는) NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>18</LINE>
+        <COLUMN>4</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'*front'은(는) 'strncpy'(c:\program files (x86)\windows kits\10\include\10.0.22000.0\ucrt\string.h:334에서 선언됨)에 대한 In/Out 인수입니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>sile.h</FILENAME>
+        <LINE>19</LINE>
+        <COLUMN>25</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*front'이(가) 역참조되었지만 여전히 NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>sile.h</FILENAME>
+      <LINE>17</LINE>
+      <COLUMN>39</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>산술 오버플로: 4 바이트 값의 '+' 연산자를 사용한 다음 결과를 8 바이트 값에 캐스트합니다. 오버플로를 방지하려면 '+' 연산자를 호출하기 전에 더 광범위한 형식에 값을 캐스트합니다(io.2).</DESCRIPTION>
+    <FUNCTION>splitString</FUNCTION>
+    <DECORATED>splitString</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>sile.h</FILENAME>
+      <LINE>22</LINE>
+      <COLUMN>34</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>산술 오버플로: 4 바이트 값의 '-' 연산자를 사용한 다음 결과를 8 바이트 값에 캐스트합니다. 오버플로를 방지하려면 '-' 연산자를 호출하기 전에 더 광범위한 형식에 값을 캐스트합니다(io.2).</DESCRIPTION>
+    <FUNCTION>splitString</FUNCTION>
+    <DECORATED>splitString</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>Flie.h</FILENAME>
+      <LINE>54</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>6308</DEFECTCODE>
+    <DESCRIPTION>'realloc'는 null 포인터를 반환할 수 있습니다. 'realloc'에 인수로 전달되는 'buffer'에 null 포인터를 할당하면 원래 메모리 블록에서 누수가 발생할 수 있습니다.</DESCRIPTION>
+    <FUNCTION>readFromFile</FUNCTION>
+    <DECORATED>readFromFile</DECORATED>
+    <FUNCLINE>26</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+      <FILENAME>Flie.h</FILENAME>
+      <LINE>55</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>28182</DEFECTCODE>
+    <DESCRIPTION>NULL 포인터를 역참조하고 있습니다. 'buffer'에 'realloc()`54'과(와) 동일한 NULL 값이 포함되어 있습니다. </DESCRIPTION>
+    <FUNCTION>readFromFile</FUNCTION>
+    <DECORATED>readFromFile</DECORATED>
+    <FUNCLINE>26</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>27</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>28</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>34</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>35</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>36</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>37</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>39</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>54</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'buffer'은(는) NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\201827055_DB_First\</FILEPATH>
+        <FILENAME>Flie.h</FILENAME>
+        <LINE>55</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'buffer'이(가) 역참조되었지만 여전히 NULL일 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT></DEFECTS>

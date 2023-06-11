@@ -3,16 +3,17 @@
 #include "GameEnum.h"
 
 using namespace GameEngine;
-GameLoop_::GameLoop_() : targetFPS(30), frameDelay(1000 / targetFPS) {
+GameLoop_::GameLoop_() : targetFPS(30), frameDelay(1000 / targetFPS), button_ev(0) {
 	score = 0;
 	Gamestate = Title;
-	start_Loop = true;
+	start_Loop = true;	
 	
 	//커서 설정 핸들
 	hOut = GetStdHandle(STD_OUTPUT_HANDLE);	
 
 	//RenderHandle
-	renderHandle = GameEngine::RenderHandle();
+	renderHandle = new GameEngine::RenderHandle();		
+	
 }
 GameLoop_::~GameLoop_() {
 
@@ -21,7 +22,7 @@ GameLoop_::~GameLoop_() {
 void GameLoop_::startLoop_() {	
 	init();
 	while (start_Loop) {
-		auto start = std::chrono::high_resolution_clock::now();
+		auto start = std::chrono::high_resolution_clock::now();	
 		Input();
 		Update();
 		Render();
@@ -37,17 +38,19 @@ void GameLoop_::startLoop_() {
 }
 
 void GameLoop_::init() {
-	//std::thread inputThread(InputThread);
+	
 	SetConsoleWindowSize();
-	//SceneCreate(Gamestate);		
 	Cursor_Active(false);
-	//renderHandle.ChangeScene(Gamestate);
+	
+	SceneChange(Gamestate);				
+	inputHandle = new GameEngine::InputHandle(renderHandle->ButtonGet());
+	
 }
 
-void GameLoop_::SceneCreate(state state) {
+void GameLoop_::SceneChange(state state) {
 
 	switch (state) {
-	case Title:  break;
+	case Title: renderHandle->ChangeScene(Gamestate); break;
 	case Game:  break;
 	case Rank:  break;
 	case Exit:  break;
@@ -56,17 +59,22 @@ void GameLoop_::SceneCreate(state state) {
 }
 
 void GameLoop_::Update() {
-	renderHandle.Set_ObjectUpdate();
-}
-
-void GameLoop_::Render() {
-	renderHandle.Drawing(hOut);
-	renderHandle.ScreenFlipping();
+	
+	renderHandle->Set_ObjectUpdate();
+	renderHandle->Drawing(hOut);
 	
 }
 
-void GameLoop_::Input() {
+void GameLoop_::Render() {	
+	renderHandle->Printing(hOut);
+	renderHandle->ScreenFlipping();	
+}
 
+void GameLoop_::Input() {
+	//std::lock_guard<std::mutex> lock(mtx);
+	button_ev=inputHandle->KeyCheck();
+	renderHandle->Button_input(button_ev);
+	button_ev = 0;
 }
 
 

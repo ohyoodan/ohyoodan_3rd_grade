@@ -1,0 +1,561 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'newNode'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Tree.h"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 5,
+                  "endLine": 12,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "createNode",
+                  "decoratedName": "createNode",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Tree.h"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "'newNode'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Tree.h"
+                          },
+                          "region": {
+                            "startLine": 12,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "'newNode'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 '*front'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 6,
+                  "endLine": 19,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "splitString",
+                  "decoratedName": "splitString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 5,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 6,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 9,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 9,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 17,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "'*front'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 18,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "'*front'은(는) 'strncpy'(c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\string.h:334에서 선언됨)에 대한 In/Out 인수입니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                          },
+                          "region": {
+                            "startLine": 19,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "'*front'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "산술 오버플로: 4 바이트 값의 '+' 연산자를 사용한 다음 결과를 8 바이트 값에 캐스트합니다. 오버플로를 방지하려면 '+' 연산자를 호출하기 전에 더 광범위한 형식에 값을 캐스트합니다(io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 29,
+                  "endLine": 17,
+                  "endColumn": 42
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "splitString",
+                  "decoratedName": "splitString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "산술 오버플로: 4 바이트 값의 '-' 연산자를 사용한 다음 결과를 8 바이트 값에 캐스트합니다. 오버플로를 방지하려면 '-' 연산자를 호출하기 전에 더 광범위한 형식에 값을 캐스트합니다(io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+                },
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 28,
+                  "endLine": 22,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "splitString",
+                  "decoratedName": "splitString",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6308",
+          "message": {
+            "text": "'realloc'는 null 포인터를 반환할 수 있습니다. 'realloc'에 인수로 전달되는 'buffer'에 null 포인터를 할당하면 원래 메모리 블록에서 누수가 발생할 수 있습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 21,
+                  "endLine": 54,
+                  "endColumn": 51
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "readFromFile",
+                  "decoratedName": "readFromFile",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "NULL 포인터를 역참조하고 있습니다. 'buffer'에 'realloc()`54'과(와) 동일한 NULL 값이 포함되어 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 5,
+                  "endLine": 55,
+                  "endColumn": 21
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "readFromFile",
+                  "decoratedName": "readFromFile",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 27,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 28,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 35,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 36,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 37,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 39,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "'buffer'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "'buffer'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Tree.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "42cc58f6226e69943aacc7040233de0fd84b55827ee66be96fa9e3aad8f6c01e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/sile.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c8b59d034e03a6d21b081151677bd8830c8d978d70df8e49fe5e59925db81a55"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_DB_First/Flie.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "f8993f1f730030f5f52cfa5c804a1e3a22c81acb0e8b69c97a719871c6b3d233"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/201827055_db_first/201827055_db_first.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "893ec1d6e2250ccfc69c07ca1ba1bdb7c21ae507d22e71d134c90c3ed7a4df39"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+﻿  Main.c
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(31,32): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\Scanf_08week\Main.c(61,11): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 5 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Scanf_08week.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Release\Scanf_08week.exe

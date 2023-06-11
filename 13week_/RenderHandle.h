@@ -11,18 +11,17 @@ namespace GameEngine {
 	private:
 
 		Scene* scene;
-		
-		CHAR_INFO(*currentBuffer)[BUFFER_HEIGHT][BUFFER_WIDTH];
-		CHAR_INFO(*nextBuffer)[BUFFER_HEIGHT][BUFFER_WIDTH];
-		
+		COORD topLeft;
+		CHAR_INFO(*SceneBuffer)[BUFFER_HEIGHT][BUFFER_WIDTH];
+		CHAR_INFO currentBuffer[BUFFER_HEIGHT][BUFFER_WIDTH];
+		CHAR_INFO nextBuffer[BUFFER_HEIGHT][BUFFER_WIDTH];
+		SMALL_RECT consoleWriteArea;
+		COORD bufferSize;
 	public:
 		RenderHandle();
 		~RenderHandle();
 
 		void ChangeScene(state state);
-
-
-
 
 		void ScreenClear();
 
@@ -30,15 +29,17 @@ namespace GameEngine {
 
 		void ScreenRelease();
 
+		void Set_ObjectUpdate();
 
-		void Set_ObjectUpdate();		
-					
-		void Drawing(HANDLE handle);
+		void Drawing(HANDLE handle);		
 
+		void Printing(HANDLE handle);
+
+		Button_state ButtonGet();
 		
-		void Title();
-		
+		void Button_input(int i);
 
+		//state SceneChangeEvent();
 	};
 }
 

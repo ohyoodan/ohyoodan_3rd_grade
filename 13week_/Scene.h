@@ -12,34 +12,37 @@ namespace GameEngine {
 
 	class Scene {
 	protected:
+
 		std::vector<GameEngine::Object*> ObjectList;	
-		CHAR_INFO scene_Object[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];//화면 셋팅
-		
-		bool ArrowKey;		
+
+		CHAR_INFO scene_Object[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];//화면 셋팅				
 
 		CHAR_INFO buffer1[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
 		
-		
+		Button_state button_state;
+
+		WORD Color(int text, int background);
 
 	public: Scene();
 
 
 	~Scene();
 
-		  virtual CHAR_INFO(*DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
+		virtual void DrawOut();
 
 
 		  void ObjectAdd(int& X, int& Y, int& Z, Object* Obj);
-
+		  void ObjectRemove(Object* Obj);
 
 		  void clear();
 
-		  CHAR_INFO(&GetBuffer())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];
-		  
-		  WORD Color(int text,int background);
-		  
-		  
+		  CHAR_INFO(&GetBuffer())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH];		  		  
+		  		  
+		   Button_state ButtonGet();
 
+		   virtual void ButtonInput(int i);
+
+		   virtual state OutScene();
 	};
 
 	class Title_:public Scene{
@@ -56,20 +59,13 @@ namespace GameEngine {
 	
 	~Title_();
 
-	void Enter();
+	state OutScene()override;
 		
-	
-
 	void Up();
 		
-	
-	
 	void Down();
 
-
-
-	CHAR_INFO(*DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH] override;
-	
+	void DrawOut() override;
 	
 	void Game_R();
 
@@ -77,7 +73,7 @@ namespace GameEngine {
 
 	void Exit_R();
 	
-
+	void ButtonInput(int i) override;
 	};
 
 	class Game_: public Scene {
@@ -86,7 +82,12 @@ namespace GameEngine {
 
 	~Game_();
 
+	void ButtonInput(int i)override;
 
+	void DrawOut()override;
+
+	state OutScene()override;
+	
 	};
 
 	class Rank_: public Scene {

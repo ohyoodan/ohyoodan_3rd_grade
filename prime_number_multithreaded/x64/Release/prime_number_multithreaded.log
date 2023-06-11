@@ -1,0 +1,7 @@
+﻿  prime_number_multithereaded.cpp
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\prime_number_multithreaded\prime_number_multithereaded.cpp(38,13): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 206 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  prime_number_multithreaded.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Release\prime_number_multithreaded.exe

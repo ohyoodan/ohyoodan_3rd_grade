@@ -4,6 +4,8 @@
 #include <thread>
 #include <memory>
 #include <mutex>
+#include <conio.h>
+#include <Windows.h>
 
 
 using namespace std;
@@ -62,6 +64,7 @@ void main() {
 				}
 				if (IsPrimeNumber(n)) {
 					lock_guard<recursive_mutex>primes_lock(primes_mutex);
+					Sleep(1);
 					primes.push_back(n);
 				}
 			}

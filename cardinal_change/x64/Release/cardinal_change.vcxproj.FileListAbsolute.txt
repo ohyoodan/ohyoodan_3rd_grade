@@ -1,0 +1,2 @@
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Release\cardinal_change.exe.lastcodeanalysissucceeded
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\cardinal_change\x64\Release\NativeCodeAnalysis.read.1.tlog

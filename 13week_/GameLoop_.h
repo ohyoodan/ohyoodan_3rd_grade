@@ -11,6 +11,8 @@
 #include "Command.h"
 #include "GameEnum.h"
 #include "RenderHandle.h"
+#include "InputHandle.h"
+#include <mutex>
 
 
 namespace GameEngine {
@@ -23,12 +25,21 @@ namespace GameEngine {
 		const int frameDelay;
 		bool start_Loop;
 		int score;
-				
+		
+		std::mutex mtx;
+		int button_ev;
+
 		HANDLE hOut;
 		CONSOLE_CURSOR_INFO cInfo;		
 		state Gamestate;
-		
-		GameEngine::RenderHandle renderHandle;
+		std::thread inputThread;
+
+		GameEngine::RenderHandle* renderHandle;
+		GameEngine::InputHandle* inputHandle;
+
+		bool SceneChangeEvent;
+
+		bool SceneChangeEventChack();
 
 	public:		
 		GameLoop_();
@@ -40,7 +51,7 @@ namespace GameEngine {
 
 	private:
 		void init();
-		void SceneCreate(state state);
+		void SceneChange(state state);
 		void Update();
 		void Render();
 		void Input();

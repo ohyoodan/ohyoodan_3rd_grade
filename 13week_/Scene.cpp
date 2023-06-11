@@ -4,12 +4,11 @@
 namespace GameEngine {
 
 
-	CHAR_INFO(*Scene::DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH]{
-
-		return &scene_Object;
+	void Scene::DrawOut(){
+		
 	}
 
-		void Scene::clear() {
+	void Scene::clear() {
 		for (int z = 0; z < BUFFER_DEPTH; ++z) {
 			for (int y = 0; y < BUFFER_HEIGHT; ++y) {
 				for (int x = 0; x < BUFFER_WIDTH; ++x) {
@@ -24,15 +23,29 @@ namespace GameEngine {
 		return scene_Object;
 
 	}
-		Scene::Scene() {
-
+	Scene::Scene() {
+		for (auto* object : ObjectList) {
+			delete object;
+		}
 	};
+
 	Scene::~Scene() {};
 	void Scene::ObjectAdd(int& X, int& Y, int& Z, Object* Obj) {
 
 		ObjectList.push_back(Obj);
 
 	}
+
+	void Scene::ObjectRemove(Object* Obj) {
+		// 요소를 검색하여 제거
+		auto it = std::find(ObjectList.begin(), ObjectList.end(), Obj);
+		if (it != ObjectList.end()) {
+			ObjectList.erase(it);
+		}
+		// 메모리 해제
+		delete Obj;
+	}
+
 	WORD Scene::Color(int text, int background) {
 		int color = text + (background * 16);
 		WORD attributes = 0;
@@ -59,11 +72,22 @@ namespace GameEngine {
 		return attributes;
 	}
 
+	 Button_state Scene::ButtonGet() {
+		return button_state;
+	}
+
+	 void Scene::ButtonInput(int i) {
+
+	 }
+
+	 state Scene::OutScene() {
+		 return Title;
+	 }
 	//=============================================================================================
 
 
 	Title_::Title_() :Menu(Game) {
-
+		button_state = { true,true,true,true,true,false };//위,아래,엔터
 	}
 	Title_::~Title_() {
 
@@ -73,33 +97,23 @@ namespace GameEngine {
 	void Title_::Up() {
 		switch (Menu)
 		{
-		case Game: Menu == Game; break;
-		case Rank: Menu == Game; break;
-		case Exit: Menu == Rank; break;
+		case Game: Menu = Game; break;
+		case Rank: Menu = Game; break;
+		case Exit: Menu = Rank; break;
 		}
 	}
 
 	void Title_::Down() {
 		switch (Menu)
 		{
-		case Game: Menu == Rank; break;
-		case Rank: Menu == Exit; break;
-		case Exit: Menu == Exit; break;
-
+		case Game: Menu = Rank; break;
+		case Rank: Menu = Exit; break;
+		case Exit: Menu = Exit; break;
 		}
 
 	}
-
-	void Title_::Enter() { // 여기서 타이틀벗어나야됨  나는 이제 해당이다~알려줘야됨
-		switch (Menu)
-		{
-		case Game: break;
-		case Rank: break;
-		case Exit: break;
-		}
-	}
-
-	CHAR_INFO(*Title_::DrawOut())[BUFFER_DEPTH][BUFFER_HEIGHT][BUFFER_WIDTH]
+	
+	void Title_::DrawOut()
 	{
 
 		switch (Menu)
@@ -108,7 +122,7 @@ namespace GameEngine {
 		case Rank:Rank_R();  break;
 		case Exit:Exit_R();  break;
 		}
-	return &scene_Object;
+	
 	}
 
 	void Title_::Game_R(){
@@ -166,20 +180,53 @@ namespace GameEngine {
 		scene_Object[0][12][42] = { 'T',Color(7,4) };
 
 	}
-	
+	void Title_::ButtonInput(int i) {
+		switch (i)
+		{
+		case 1: Up(); break;
+		case 2: Down(); break;
+		case 3: Up(); break;
+		case 4: Down(); break;
+		case 5: OutScene(); break;
+		default:
+			break;
+		}
+
+	}
+
+	state Title_::OutScene() {
+		switch (Menu)
+		{
+		case GameEngine::Title_::Game: return state::Game;
+			break;
+		case GameEngine::Title_::Rank: return state::Rank;
+			break;
+		case GameEngine::Title_::Exit: return state::Exit;
+			break;		
+		}
+		
+	}
 
 	//=============================================================================================
 
 
-	Game_::Game_() {
-
-
-
+	Game_::Game_() {		
+		button_state = { true,false,false,false,false,true };
 	}
 	Game_::~Game_() {
 
+	}
 
+	void Game_::ButtonInput(int i) {
 
+	}
+
+	void Game_::DrawOut() {
+
+	}
+
+	state Game_::OutScene() {
+		return state::Title;
 	}
 
 	//===============================================================================================

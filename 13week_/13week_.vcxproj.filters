@@ -33,7 +33,7 @@
     <ClCompile Include="RenderHandle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Buffers.cpp">
+    <ClCompile Include="InputHandle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +56,7 @@
     <ClInclude Include="GameEnum.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Buffers.h">
+    <ClInclude Include="InputHandle.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

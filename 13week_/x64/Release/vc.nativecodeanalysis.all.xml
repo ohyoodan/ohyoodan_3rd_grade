@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\</FILEPATH>
+      <FILENAME>GameLoop_.cpp</FILENAME>
+      <LINE>6</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'GameEngine::GameLoop_::cInfo' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>GameEngine::GameLoop_::{ctor}</FUNCTION>
+    <DECORATED>??0GameLoop_@GameEngine@@QEAA@XZ</DECORATED>
+    <FUNCLINE>6</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameEngine::GameLoop_::cInfo</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\</FILEPATH>
+      <FILENAME>Object_.cpp</FILENAME>
+      <LINE>13</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'GameEngine::Object_::z' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>GameEngine::Object_::{ctor}</FUNCTION>
+    <DECORATED>??0Object_@GameEngine@@QEAA@XZ</DECORATED>
+    <FUNCLINE>13</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameEngine::Object_::z</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\</FILEPATH>
+      <FILENAME>Scene.cpp</FILENAME>
+      <LINE>26</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'GameEngine::Scene::scene_Object' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>GameEngine::Scene::{ctor}</FUNCTION>
+    <DECORATED>??0Scene@GameEngine@@QEAA@XZ</DECORATED>
+    <FUNCLINE>26</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameEngine::Scene::scene_Object</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\</FILEPATH>
+      <FILENAME>RenderHandle.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'GameEngine::RenderHandle::scene' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>GameEngine::RenderHandle::{ctor}</FUNCTION>
+    <DECORATED>??0RenderHandle@GameEngine@@QEAA@XZ</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameEngine::RenderHandle::scene</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

@@ -130,19 +130,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Buffers.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="GameLoop_.cpp" />
+    <ClCompile Include="InputHandle.cpp" />
     <ClCompile Include="Object_.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RenderHandle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Buffers.h" />
     <ClInclude Include="GameEnum.h" />
     <ClInclude Include="GameLoop_.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="InputHandle.h" />
     <ClInclude Include="Object_.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="RenderHandle.h" />

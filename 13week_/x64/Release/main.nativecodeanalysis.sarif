@@ -1,0 +1,91 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "f45e26b6250e5524cc97818ea869cad4797a0c23cb6de0404c19233399cc0bce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/gameloop_.h"
+          },
+          "hashes": {
+            "sha-256": "fc8065987425f194c72d9b949c332d661222d6b756af52d774db59642d918a72"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/scene.h"
+          },
+          "hashes": {
+            "sha-256": "ff53885dc066eadedd08f98f02e7004c99f62a774861b6834e29723f0dd3f27d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/object_.h"
+          },
+          "hashes": {
+            "sha-256": "a38fe06a9736324cf2675d0592096d77b3c5ca63bfc6f1ed2d27102a8f836035"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/gameenum.h"
+          },
+          "hashes": {
+            "sha-256": "4ca8687e402f4ae8cdcc81c8e03a306087b363e552d1c564cfcb9296f9ffd64e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/command.h"
+          },
+          "hashes": {
+            "sha-256": "5a87e5d892f5f42b3358d8fb34c601de8261db75f3fad10db9be1d39db1a2dc2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/renderhandle.h"
+          },
+          "hashes": {
+            "sha-256": "f8830b3f4e0761428aa3e97180c9bc15c1939152370ff999dc3ec056b6c39444"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/inputhandle.h"
+          },
+          "hashes": {
+            "sha-256": "aba11668ae36043ae7118e17aa21c6e6e69aaac9974523d905a54d707011cf2f"
+          }
+        }
+      ]
+    }
+  ]
+}

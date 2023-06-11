@@ -1,0 +1,154 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'GameEngine::Scene::scene_Object' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/Scene.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 10,
+                  "endLine": 26,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GameEngine::Scene::{ctor}",
+                  "decoratedName": "??0Scene@GameEngine@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "GameEngine::Scene::scene_Object"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'GameEngine::Scene::buffer1' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/Scene.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 10,
+                  "endLine": 26,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GameEngine::Scene::{ctor}",
+                  "decoratedName": "??0Scene@GameEngine@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "GameEngine::Scene::buffer1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'GameEngine::Scene::button_state' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/Scene.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 10,
+                  "endLine": 26,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GameEngine::Scene::{ctor}",
+                  "decoratedName": "??0Scene@GameEngine@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "GameEngine::Scene::button_state"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32532.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/Scene.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "dc614be4b8be6efeb8ad7ddb7f7f002a076af13f7ad110bc82dbd9fc62122eca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/scene.h"
+          },
+          "hashes": {
+            "sha-256": "ff53885dc066eadedd08f98f02e7004c99f62a774861b6834e29723f0dd3f27d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/object_.h"
+          },
+          "hashes": {
+            "sha-256": "a38fe06a9736324cf2675d0592096d77b3c5ca63bfc6f1ed2d27102a8f836035"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/03_01 yuhan/problem-solving skills/ohyoodan_3rd_grade/13week_/gameenum.h"
+          },
+          "hashes": {
+            "sha-256": "4ca8687e402f4ae8cdcc81c8e03a306087b363e552d1c564cfcb9296f9ffd64e"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,13 @@
 ﻿  GameLoop_.cpp
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(30,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\GameLoop_.cpp(31,21): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
           with
           [
               _Rep=__int64
           ]
-  Scene.cpp
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(76,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(77,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(78,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(85,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(86,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\Scene.cpp(87,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+  main.cpp
+  RenderHandle.cpp
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\RenderHandle.cpp(15,14): warning C4101: 'nextBuffer' :참조되지 않은 지역 변수입니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\RenderHandle.cpp(12,15): warning C4101: 'SceneBuffer' :참조되지 않은 지역 변수입니다.
+D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\13week_\RenderHandle.cpp(14,14): warning C4101: 'currentBuffer' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다...
   13week_.vcxproj -> D:\03_01 yuhan\problem-solving skills\ohyoodan_3rd_grade\x64\Debug\13week_.exe
