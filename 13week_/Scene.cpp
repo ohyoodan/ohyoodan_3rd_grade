@@ -4,8 +4,8 @@
 namespace GameEngine {
 
 
-	void Scene::DrawOut(){
-		
+	void Scene::DrawOut() {
+
 	}
 
 	void Scene::clear() {
@@ -23,7 +23,7 @@ namespace GameEngine {
 		return scene_Object;
 
 	}
-	Scene::Scene() {
+		Scene::Scene() {
 		for (auto* object : ObjectList) {
 			delete object;
 		}
@@ -72,17 +72,17 @@ namespace GameEngine {
 		return attributes;
 	}
 
-	 Button_state Scene::ButtonGet() {
+	Button_state Scene::ButtonGet() {
 		return button_state;
 	}
 
-	 void Scene::ButtonInput(int i) {
+	void Scene::ButtonInput(int i) {
 
-	 }
+	}
 
-	 state Scene::OutScene() {
-		 return Title;
-	 }
+	state Scene::OutScene() {
+		return Title;
+	}
 	//=============================================================================================
 
 
@@ -112,22 +112,19 @@ namespace GameEngine {
 		}
 
 	}
-	
+
 	void Title_::DrawOut()
 	{
-
 		switch (Menu)
 		{
 		case Game:Game_R();  break;
 		case Rank:Rank_R();  break;
 		case Exit:Exit_R();  break;
 		}
-	
 	}
-
-	void Title_::Game_R(){
-		clear();
-				
+	
+	void Title_::Game_R() {
+		clear();	
 		scene_Object[0][10][39] = { 'G', Color(7,4) };
 		scene_Object[0][10][40] = { 'A', Color(7,4) };
 		scene_Object[0][10][41] = { 'M', Color(7,4) };
@@ -191,7 +188,6 @@ namespace GameEngine {
 		default:
 			break;
 		}
-
 	}
 
 	state Title_::OutScene() {
@@ -202,15 +198,15 @@ namespace GameEngine {
 		case GameEngine::Title_::Rank: return state::Rank;
 			break;
 		case GameEngine::Title_::Exit: return state::Exit;
-			break;		
+			break;
 		}
-		
+
 	}
 
 	//=============================================================================================
 
 
-	Game_::Game_() {		
+	Game_::Game_() {
 		button_state = { true,false,false,false,false,true };
 	}
 	Game_::~Game_() {

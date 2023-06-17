@@ -18,6 +18,8 @@ namespace GameEngine {
 		ScreenRelease();		
 	}
 	
+
+
 	void RenderHandle::ChangeScene(state state) {					
 		ScreenRelease();
 			switch (state)
@@ -44,7 +46,12 @@ namespace GameEngine {
 	}
 
 	void RenderHandle::ScreenRelease() {
-		delete scene;
+		if (scene == nullptr) {
+
+		}else {
+			delete scene;
+		}
+		
 	}
 	void RenderHandle::Set_ObjectUpdate() {//Update1¼ø				
 		scene->DrawOut();		

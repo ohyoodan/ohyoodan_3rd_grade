@@ -20,6 +20,7 @@ char(*nextBuffer)[BUFFER_WIDTH] = buffer2;
 const int targetFPS = 30;
 const int frameDelay=1000/30;
 
+
 void SetConsoleColor(int text,int background);
 void Render() {
     DWORD dw;

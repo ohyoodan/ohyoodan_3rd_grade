@@ -13,7 +13,8 @@ GameLoop_::GameLoop_() : targetFPS(30), frameDelay(1000 / targetFPS), button_ev(
 
 	//RenderHandle
 	renderHandle = new GameEngine::RenderHandle();		
-	
+
+	eventHandle = new GameEngine::Event_Handler();
 }
 GameLoop_::~GameLoop_() {
 
@@ -21,18 +22,21 @@ GameLoop_::~GameLoop_() {
 
 void GameLoop_::startLoop_() {	
 	init();
+	
 	while (start_Loop) {
 		auto start = std::chrono::high_resolution_clock::now();	
+		
 		Input();
 		Update();
 		Render();
+
 		auto end = std::chrono::high_resolution_clock::now();
 		auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 		int remainingTIme = frameDelay - elapsedTime.count();
 		if (remainingTIme > 0) {
 			std::this_thread::sleep_for(std::chrono::microseconds(remainingTIme));
 		}
-
+		
 	}
 	GameEnd();
 }
@@ -40,20 +44,31 @@ void GameLoop_::startLoop_() {
 void GameLoop_::init() {
 	
 	SetConsoleWindowSize();
+	
 	Cursor_Active(false);
 	
 	SceneChange(Gamestate);				
-	inputHandle = new GameEngine::InputHandle(renderHandle->ButtonGet());
-	
+			
+	InputButtonSet();
+		
+}
+
+void GameLoop_::InputButtonSet() {
+	if (inputHandle == nullptr) {
+		inputHandle = new GameEngine::InputHandle(renderHandle->ButtonGet());
+	}
+	else {	
+		inputHandle->button_set(renderHandle->ButtonGet());
+	}
 }
 
 void GameLoop_::SceneChange(state state) {
 
 	switch (state) {
 	case Title: renderHandle->ChangeScene(Gamestate); break;
-	case Game:  break;
-	case Rank:  break;
-	case Exit:  break;
+	case Game:  renderHandle->ChangeScene(Gamestate); break;
+	case Rank:  renderHandle->ChangeScene(Gamestate); break;
+	case Exit:   break;
 	}
 
 }
@@ -71,7 +86,7 @@ void GameLoop_::Render() {
 }
 
 void GameLoop_::Input() {
-	//std::lock_guard<std::mutex> lock(mtx);
+
 	button_ev=inputHandle->KeyCheck();
 	renderHandle->Button_input(button_ev);
 	button_ev = 0;

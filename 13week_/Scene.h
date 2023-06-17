@@ -73,6 +73,7 @@ namespace GameEngine {
 
 	void Exit_R();
 	
+	void Title_R();
 	void ButtonInput(int i) override;
 	};
 

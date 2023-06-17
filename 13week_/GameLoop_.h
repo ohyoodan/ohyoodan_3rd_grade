@@ -12,6 +12,7 @@
 #include "GameEnum.h"
 #include "RenderHandle.h"
 #include "InputHandle.h"
+#include "Event_Handler.h"
 #include <mutex>
 
 
@@ -36,8 +37,11 @@ namespace GameEngine {
 
 		GameEngine::RenderHandle* renderHandle;
 		GameEngine::InputHandle* inputHandle;
-
+		GameEngine::Event_Handler* eventHandle;
+		
 		bool SceneChangeEvent;
+
+
 
 		bool SceneChangeEventChack();
 
@@ -56,7 +60,7 @@ namespace GameEngine {
 		void Render();
 		void Input();
 		void ScoreSet(int Score);
-		
+		void InputButtonSet();
 
 		void GameEnd();
 		

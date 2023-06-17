@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -131,14 +131,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Event_Handler.cpp" />
     <ClCompile Include="GameLoop_.cpp" />
     <ClCompile Include="InputHandle.cpp" />
     <ClCompile Include="Object_.cpp" />
-    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RenderHandle.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Event_Handler.h" />
     <ClInclude Include="GameEnum.h" />
     <ClInclude Include="GameLoop_.h" />
     <ClInclude Include="Command.h" />
